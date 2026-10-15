@@ -200,70 +200,6 @@ DEMOS["coffee"] = function (el) {
 };
 
 // ---------------------------------------------------------------
-// Sprint toolkit: an illustration with made-up teams and numbers.
-// ---------------------------------------------------------------
-DEMOS["sprint-toolkit"] = function (el) {
-  const cmds = [
-    {
-      ask: "Prep my standup for Team Falcon",
-      steps: ["Loaded sprint-report steering file", "Pulled 23 stories from Agility", "Grouped by owner and status"],
-      out: {
-        title: "Standup prep · Team Falcon · Day 6 of 10",
-        cols: ["Owner", "Yesterday", "Blocked"],
-        rows: [["Jordan", "Closed 2 stories", "—"], ["Priya", "Moved 1 to QA", "Waiting on API access"], ["Sam", "No updates in 2 days", "Check in"]],
-      },
-    },
-    {
-      ask: "Is release 26.3 ready to ship?",
-      steps: ["Loaded release steering file", "Checked 5 teams' open work", "Flagged items at risk"],
-      out: {
-        title: "Release 26.3 readiness · 87% done",
-        cols: ["Team", "Done", "At risk"],
-        rows: [["Falcon", "18 / 19", "0"], ["Harbor", "12 / 15", "2"], ["Summit", "9 / 9", "0"], ["Cedar", "14 / 17", "1"], ["Atlas", "11 / 12", "0"]],
-      },
-    },
-    {
-      ask: "Which stories skipped QA this sprint?",
-      steps: ["Read status history for 61 stories", "Found moves from In Progress straight to Done", "Paired agent drafted test cases"],
-      out: {
-        title: "QA check · 3 stories skipped testing",
-        cols: ["Story", "Team", "Next step"],
-        rows: [["S-4412 Seat map refresh", "Harbor", "4 test cases drafted"], ["S-4398 Login timeout", "Cedar", "2 test cases drafted"], ["S-4371 Fare cache", "Harbor", "3 test cases drafted"]],
-      },
-    },
-  ];
-  el.innerHTML = `
-    <div class="dm-sprint">
-      <div class="dm-chips">${cmds.map((c, i) => `<button class="chip" data-i="${i}">${c.ask}</button>`).join("")}</div>
-      <div class="dm-term"><div class="dm-prompt-line">› <span class="dm-typed">Pick a request above</span></div><div class="dm-steps"></div><div class="dm-out"></div></div>
-    </div>`;
-  let timers = [];
-  el.querySelector(".dm-chips").addEventListener("click", (e) => {
-    const b = e.target.closest("[data-i]");
-    if (!b) return;
-    timers.forEach(clearTimeout);
-    timers = [];
-    el.querySelectorAll(".dm-chips .chip").forEach((c) => c.classList.toggle("on", c === b));
-    const c = cmds[b.dataset.i];
-    el.querySelector(".dm-typed").textContent = c.ask;
-    const steps = el.querySelector(".dm-steps");
-    const out = el.querySelector(".dm-out");
-    steps.innerHTML = "";
-    out.innerHTML = "";
-    c.steps.forEach((s, i) =>
-      timers.push(setTimeout(() => (steps.innerHTML += `<div>✓ ${s}</div>`), 350 * (i + 1)))
-    );
-    timers.push(
-      setTimeout(() => {
-        out.innerHTML = `<h4>${c.out.title}</h4><table><tr>${c.out.cols.map((h) => `<th>${h}</th>`).join("")}</tr>${c.out.rows
-          .map((r) => `<tr>${r.map((v) => `<td>${v}</td>`).join("")}</tr>`)
-          .join("")}</table>`;
-      }, 350 * (c.steps.length + 1))
-    );
-  });
-};
-
-// ---------------------------------------------------------------
 // Prompt compression: the four prompts and their measured results.
 // ---------------------------------------------------------------
 DEMOS["compression"] = function (el) {
@@ -409,7 +345,7 @@ FIGURES["delta-architecture"] = function () {
       </div>
       <div class="arch-lane">
         <div class="arch-q">Needs something written</div>
-        <div class="arch-box arch-accent"><b>15+ AI agents</b><span>Markdown instructions in Kiro</span></div>
+        <div class="arch-box arch-accent"><b>17 AI agents</b><span>Markdown instructions in Kiro</span></div>
         <div class="arch-side">reads <b>steering files</b>: dates, rosters, status rules, formats</div>
         <div class="arch-out">Newsletters · release notes · exec decks · test cases</div>
       </div>

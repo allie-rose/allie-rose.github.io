@@ -31,88 +31,80 @@ window.PORTFOLIO = {
       title: "Internal AI Consulting at Delta",
       year: "2026",
       description:
-        "My brief was \"optimize workflow using AI.\" I found where five software teams were losing hours, then built and shipped the fix: three dashboards, 15+ AI agents, and one-click installers so the teams could keep using it after I left.",
+        "Delta gave me a one-line brief: \"optimize workflow using AI.\" I built a toolkit five software teams could install in one click, saving each Scrum Master 5–8 hours a sprint. Then I modeled their data in a way nobody had before, and led a 100-person meeting on what it showed.",
       tags: ["AI Strategy", "AI Agents", "Python", "Dashboards"],
       link: "",
       details: {
         summary:
-          "My summer 2026 internship on Delta's in-flight Wi-Fi software teams came with a one-line brief: \"optimize workflow using AI.\" I treated it like a consulting job. I figured out where the Scrum Masters' time was going, decided which problems needed AI and which didn't, built the tools, and packaged them so the teams could keep running them without me.",
+          "Delta gave me a one-line brief: \"optimize workflow using AI.\" By the end of the summer, the five software teams behind Delta's in-flight Wi-Fi had a toolkit they could install in one click: three dashboards, 17 AI agents, and a data pipeline. Along the way I showed, with data, that the teams' estimates were badly off, presented it to a 100-person meeting, and led the session on how to fix it.",
         role: "Data Analytics and AI Intern, Delta Air Lines (May–Aug 2026)",
         stack: ["Python", "Flask", "Agility REST + History API", "SQLite", "Kiro AI IDE", "PowerShell / bash"],
         stats: [
           ["5–8 hrs", "saved per sprint, per Scrum Master"],
-          ["15+", "AI agents in the full toolkit"],
-          ["10", "one-click sprint reports"],
-          ["2–4 sec", "per report, vs. 60–90 sec asking an AI"],
+          ["100", "people at the meeting where I presented my findings"],
+          ["17", "AI agents"],
+          ["3", "dashboards, 10+ one-click reports"],
         ],
-        demo: "sprint-toolkit",
+        demo: "delta-dashboard",
         demoNote:
-          "A mock-up of asking the toolkit for something. The teams, stories, and numbers are made up because the real ones are Delta's internal data.",
+          "A working recreation of the Sprint Dashboard I built. Click through the reports. Every team, person, story, and number here is made up; the real one runs on Delta's data.",
         sections: [
           {
-            h: "The brief",
-            p: [
-              "Five Agile teams build the software behind Delta's in-flight Wi-Fi, and they track everything in Digital.ai Agility. Before every standup, sprint closeout, and release, a Scrum Master clicked through Agility, copied numbers into a doc, and wrote it up by hand.",
-              "Nobody told me what to build. I worked alongside the Scrum Masters and team leads, mapped their week, and landed on six bottlenecks. Almost all of them were the same problem: getting information out of Agility and into a shape someone could use.",
-            ],
+            h: "How the summer went",
+            figure: "delta-timeline",
           },
           {
-            h: "Two kinds of work, two kinds of tools",
+            h: "The analysis nobody had done",
             p: [
-              "Not everything needed AI. Questions with exact answers, like which stories are blocked or which ones skipped testing, are faster and more trustworthy as code that reads the data directly. Writing-heavy work, like newsletters, release notes, and exec decks, is where AI actually saves time.",
-              "So I built both. The dashboards replaced five things I'd first tried as AI agents: each report now takes 2–4 seconds and uses zero AI tokens, instead of 60–90 seconds in an AI chat.",
+              "Nobody had checked the teams' estimates against what actually happened. I modeled their work in a way nobody had before: a daily history of every story, so I could compare estimates to how long work actually took, and split each story's time into development vs. waiting on testing. I ran it on 66 finished stories across three sprints.",
+              "The estimates were badly off, and the bigger the story, the worse they were. Work was also piling up waiting for testers, which nobody had been measuring.",
+              "I presented the findings to a meeting of about 100 people. Then I facilitated a follow-up session on how to fix it, starting from my own recommendations, and built tools to back them up. It kicked off a review of how the teams estimate work.",
+            ],
+            figure: "delta-insight",
+          },
+          {
+            h: "The design",
+            p: [
+              "Not everything needed AI. Questions with exact answers (what's blocked, what skipped testing) are faster and more trustworthy as code that reads the data directly. Writing (newsletters, release notes, exec decks) is where AI earns its keep. So I built both, on top of the same data. Moving five agents' worth of math into a dashboard cut each report from 60–90 seconds to 2–4, with zero AI tokens.",
             ],
             figure: "delta-architecture",
           },
           {
-            h: "The dashboards",
-            list: [
-              "Sprint Operations (Python/Flask): 10 one-click reports, including standup prep, sprint closeout, backlog health, planning advisor, burndown, capacity heatmap, retro, feature roll-up, estimate accuracy, and a story splitter. It also has quick actions to create a story, update a status, or move work to the next sprint.",
-              "Standup prep looks at actual status changes, not just edits, so \"moved\" means the work really moved. It also flags stale stories, blocked developers, unestimated work, and how loaded the testers are.",
-              "Release Readiness: a scorecard for each monthly release (done, in test, at risk, defects) that the release manager and five team leads used instead of digging through Agility.",
-              "QA tracking: reads each story's status history to catch work that went to Done without passing through testing, and finds regression candidates.",
-              "A data pipeline that snapshots Agility into SQLite every weekday morning and works out cycle times and bottlenecks over time, using only Python's standard library.",
+            h: "17 agents",
+            p: [
+              "Each agent is a markdown file in Kiro, an AI coding tool, that describes one repeatable job and the rules for doing it. Teammates just ask in plain English.",
             ],
+            figure: "delta-agents",
           },
           {
-            h: "The agents",
+            h: "Rules that make them trustworthy",
             p: [
-              "The agents run in Kiro, an AI coding tool. Each one is a markdown file that describes a repeatable job and the rules for doing it: write the sprint newsletter, draft release notes, build the weekly status deck, turn an idea into a well-formed story, generate test cases from acceptance criteria. There are 17 in the full toolkit.",
-              "The rules are what make them trustworthy. Here's the shape of one, recreated with made-up details:",
+              "An AI writing a status update for leadership can't be allowed to round \"almost done\" up to \"shipped.\" Here's the shape of one agent, recreated with made-up details:",
             ],
             code:
               "# Sprint newsletter agent (recreated example)\n\nGoal: a one-page update leadership can read in two minutes.\n\nSteps:\n1. Pull every story in the sprint from Agility.\n2. Group them: shipped, in testing, carried over.\n3. Write an exec summary, then a table of every story.\n\nRules:\n- Only call a story \"shipped\" if its status is Done or Accepted.\n- Never invent a number. If a metric isn't in the data, leave it out.\n- Use the team's own terms (see steering/glossary.md).",
           },
           {
-            h: "Steering files: teaching the AI once",
+            h: "Steering files",
             p: [
-              "Every agent also reads a shared set of plain-text \"steering files\": sprint dates, team rosters, how statuses flow, how to query Agility, how reports should look. The AI gets the context automatically, so nobody re-explains it in every prompt, and it uses fewer tokens. Anyone on the team can edit them, which is why the toolkit doesn't need a developer to maintain it.",
+              "Every agent reads shared plain-text files about how the teams work: sprint dates, rosters, how statuses flow, what reports should look like. Nobody re-explains context in a prompt, it uses fewer tokens, and anyone can edit them, so the toolkit doesn't need a developer to maintain it.",
             ],
             code:
               "# steering/sprint-conventions.md (recreated example)\n\n- Sprints are two weeks and start on Wednesdays.\n- Status flow: Backlog → In Progress → In Test → Done → Accepted.\n- \"At risk\" = not In Test with 3 or fewer working days left.\n- Story points: 1, 2, 3, 5, 8. Anything over 3 should be split.\n- Reports: lead with the summary, then the table. No jargon in the summary.",
           },
           {
-            h: "What the data showed",
+            h: "Shipped like a product",
             p: [
-              "Once the pipeline was collecting history, I could check things people had only guessed at. I compared estimates to actual time on 66 finished stories across three sprints. Estimates were rarely right, and the biggest stories almost never were. Splitting cycle time into development and testing showed that work was piling up waiting for testers, which nobody had measured before.",
-              "I presented this to the director with three recommendations: split stories to 3 points or less, track tester load every day, and put passenger-facing changes behind feature flags. Then I built tools for the first two: the story splitter and a tester-load indicator in standup prep. It started a review of how the teams estimate work.",
+              "A tool only matters if people keep using it after the intern leaves. Everything installs in one click on Windows or Mac from SharePoint, updates itself, runs on the user's own computer, and asks before changing anything in Agility. I wrote a \"say this, get this\" quick-start and an onboarding guide to the teams' systems.",
             ],
-          },
-          {
-            h: "Making it last after I left",
-            list: [
-              "One-click installers for Windows and Mac, shared through SharePoint, with a starter kit for Scrum Masters and a full kit for everything.",
-              "An updater agent, so when the toolkit changes, everyone's copy updates without anyone reinstalling.",
-              "Everything runs on the user's own computer, and anything that changes data in Agility asks for confirmation first.",
-              "A \"say this, get this\" quick-start manual and an onboarding guide to the teams' systems for new people.",
-            ],
+            figure: "delta-kits",
           },
           {
             h: "Results",
             list: [
               "5–8 hours saved per sprint for each Scrum Master.",
-              "Release status went from 30+ minutes of digging to one click, and the release manager and five team leads used it.",
-              "The estimation analysis started a management review of how the teams estimate work.",
+              "Release status went from 30+ minutes of digging to one click; the release manager and five team leads used it.",
+              "Presented my estimation analysis to a 100-person meeting and facilitated the follow-up on fixing it, which started a review of how the teams estimate work.",
             ],
           },
         ],
@@ -333,7 +325,7 @@ window.PORTFOLIO = {
       points: [
         "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams, found the six biggest bottlenecks, and built the fix.",
         "Built three Python/Flask dashboards (10 sprint reports, release readiness, QA tracking) and 15+ AI agents that write newsletters, release notes, and exec decks. Saves each Scrum Master 5–8 hours per sprint.",
-        "Analyzed 66 finished stories to show estimates and tester load were the real bottlenecks; presented recommendations to the director that started a review of estimation practices.",
+        "Modeled sprint data in a way the teams hadn't before (66 stories, development vs. testing time) and showed estimates were badly off; presented the findings to a 100-person meeting and facilitated the session on fixing them, starting a review of estimation practices.",
         "Shipped it as one-click installers with an auto-updater and onboarding docs, so the teams kept using it after I left.",
       ],
     },
