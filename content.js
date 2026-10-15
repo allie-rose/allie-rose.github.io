@@ -12,9 +12,9 @@
 
 window.PORTFOLIO = {
   name: "Allie Rose",
-  tagline: "I build AI tools for real work, and test how AI behaves when you change the rules.",
+  tagline: "MIS student at UGA. I build things with AI, and I like figuring out how its decisions connect to business and ethics.",
   intro:
-    "I'm an MIS student at UGA finishing a certificate in AI. Last summer at Delta I built AI agents and dashboards for five software teams. On my own time I build small tools when something bugs me, and run experiments on how AI models make decisions. Every project below has a demo you can try and the details of how I made it.",
+    "I'm finishing a certificate in AI alongside my MIS degree. Last summer at Delta I built AI agents and dashboards for five software teams. On my own time I build small tools when something bugs me, and run experiments on how AI models make decisions. Every project below has a demo you can try and the details of how I made it.",
   location: "UGA '27 · MIS + Artificial Intelligence · Athens, GA",
   email: "allie-rose1@outlook.com",
   links: {
