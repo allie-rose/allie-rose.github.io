@@ -19,3 +19,7 @@ Edit `content.js` (you can even do it on github.com: open the file, click the pe
 ## Preview on your computer
 
 Double-click `index.html` to open it in your browser.
+
+## If a change doesn't show up
+
+Browsers keep a saved copy of the site for up to 10 minutes. Press **Cmd + Shift + R** to skip it. The `?v=...` at the end of each file link in `index.html` and `project.html` forces a fresh download; change that number whenever you edit the CSS or JavaScript.
