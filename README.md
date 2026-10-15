@@ -10,10 +10,10 @@ To add a résumé, put `resume.pdf` in this folder and set `resume: "resume.pdf"
 
 ## Where it lives
 
-The site is hosted for free in two places, both built from the repo `allierose923/allierose923.github.io`:
+The site is hosted for free in two places, both built from the repo `allie-rose/allie-rose.github.io`:
 
 - **Vercel:** https://allierose.vercel.app
-- **GitHub Pages:** https://allierose923.github.io
+- **GitHub Pages:** https://allie-rose.github.io
 
 ## How to update it
 
