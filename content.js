@@ -56,7 +56,8 @@ window.PORTFOLIO = {
           {
             h: "Every tool started with a bottleneck",
             p: [
-              "I didn't start by building. I spent my first weeks analyzing how the five teams actually worked, following work from planning through release and noting every place people did the same manual steps over and over or waited on information. That gave me six bottlenecks I could point to. Every tool I built targets one of them.",
+              "I didn't start by building. I spent my first weeks analyzing how the five teams actually worked, following work from planning through release and noting where the tools left people doing repetitive steps or hunting for information. That gave me six bottlenecks I could point to, and every tool I built targets one of them.",
+              "None of this was about the teams doing anything wrong. They were doing a lot of careful work by hand because their tools didn't do it for them. My job was to take that load off, so more of their time went to building.",
             ],
             figure: "delta-bottlenecks",
           },
@@ -64,7 +65,7 @@ window.PORTFOLIO = {
             h: "A new way to look at the data",
             p: [
               "I wanted to see how well sprint plans matched what actually happened, so I modeled the teams' work in a way that hadn't been done before: a daily history of every story, comparing the time planned with the time it took, and splitting each story's time into development and testing. I ran it on 66 finished stories across three sprints.",
-              "Two patterns stood out. Smaller stories were much easier to estimate accurately, so breaking work down would make plans more reliable. And testing was where work most often waited, so tester capacity was worth tracking right alongside developer capacity.",
+              "Two patterns stood out. Smaller stories were much easier to estimate accurately, so breaking work down would make plans more reliable. And the testing stage was where stories spent the most time, so tester capacity was worth tracking right alongside developer capacity.",
               "I presented the findings to a meeting of about 100 people, then facilitated a working session where we turned them into changes, starting from my recommendations. I built tools to support those changes, and the teams began reviewing how they estimate work.",
             ],
             figure: "delta-insight",
@@ -72,7 +73,7 @@ window.PORTFOLIO = {
           {
             h: "The design",
             p: [
-              "Each bottleneck also told me what kind of tool it needed. Not everything needed AI. Questions with exact answers (what's blocked, what skipped testing) are faster and more trustworthy as code that reads the data directly. Writing (newsletters, release notes, exec decks) is where AI earns its keep. So I built both, on top of the same data. Moving five agents' worth of math into a dashboard cut each report from 60–90 seconds to 2–4, with zero AI tokens.",
+              "Each bottleneck also told me what kind of tool it needed. Not everything needed AI. Questions with exact answers (what's blocked, what still needs testing) are faster and more trustworthy as code that reads the data directly. Writing (newsletters, release notes, exec decks) is where AI earns its keep. So I built both, on top of the same data. Moving five agents' worth of math into a dashboard cut each report from 60–90 seconds to 2–4, with zero AI tokens.",
             ],
             figure: "delta-architecture",
           },
@@ -82,6 +83,15 @@ window.PORTFOLIO = {
               "Each agent is a markdown file in Kiro, an AI coding tool, that describes one repeatable job and the rules for doing it. Teammates just ask in plain English.",
             ],
             figure: "delta-agents",
+          },
+          {
+            h: "The one I'm proudest of: Story Writer",
+            p: [
+              "Writing a good user story takes time: a clear description, acceptance criteria someone can test against, a size, and a link back to the feature it belongs to. Every story was being written from scratch.",
+              "Story Writer turns a one-line idea into a complete story. It pulls what it needs from Agility so the story fits the team's existing work, and follows the team's own conventions from the steering files. Here's the kind of thing it produces, recreated with made-up details:",
+            ],
+            code:
+              "You: \"Let passengers retry login when the Wi-Fi portal times out.\"\n\nStory Writer:\n\nTitle: Retry login after portal timeout\nFeature: F-31 Faster portal login\nSize: 3 points\n\nAs a passenger, when the Wi-Fi login page times out,\nI want a clear way to try again,\nso that I can get online without restarting the whole flow.\n\nAcceptance criteria:\n- After a timeout, the page shows a \"Try again\" button and a short message.\n- Retrying keeps anything the passenger already entered.\n- After 3 failed retries, show how to get help.\n- Each timeout and retry is logged for monitoring.",
           },
           {
             h: "Rules that make them trustworthy",

@@ -408,3 +408,4 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
   .bn-arrow { display: none; }
   .bn-built { grid-column: 2; border-top: 1px dashed var(--border); padding-top: .5rem; }
 }
+.bn-star { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }

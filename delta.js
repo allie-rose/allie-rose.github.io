@@ -46,11 +46,11 @@ DEMOS["delta-dashboard"] = function (el) {
       name: "Standup prep",
       group: "Sprint Operations",
       html: () =>
-        tiles([["11", "stories moved since yesterday"], ["4", "didn't move", "warn"], ["1", "blocked", "bad"], ["1.6×", "QE load ratio", "bad"]]) +
-        T(["Person", "Moved", "Didn't move", "Flags"], [
+        tiles([["11", "stories moved since yesterday"], ["4", "no change yet", "warn"], ["1", "blocked", "bad"], ["1.6×", "QE load ratio", "bad"]]) +
+        T(["Person", "Moved", "No change yet", "Flags"], [
           ["Jordan", "S-212 → In Test", "—", ""],
           ["Priya", "S-219 → Done", "S-224", pill("blocked: API access", "bad")],
-          ["Sam", "—", "S-207, S-230", pill("no movement in 3 days", "warn")],
+          ["Sam", "—", "S-207, S-230", pill("check in: 3 days", "warn")],
           ["Lee", "S-215 → In Progress", "S-233", pill("unestimated", "warn")],
         ]) +
         `<p class="dd-note">"Moved" means an actual status change, not just an edit.</p>`,
@@ -144,7 +144,7 @@ DEMOS["delta-dashboard"] = function (el) {
       name: "QA check",
       group: "QA",
       html: () =>
-        `<div class="dd-callout">${pill("3 stories skipped testing", "bad")} Found by reading each story's status history: they went from In Progress straight to Done.</div>` +
+        `<div class="dd-callout">${pill("3 stories to double-check", "warn")} Their status history goes from In Progress to Done with no In Test step, so the dashboard flags them for a quick look.</div>` +
         T(["Story", "Team", "Path", "Next step"], [
           ["S-198 Captive portal copy", "Harbor", "In Progress → Done", "4 test cases drafted"],
           ["S-203 Login timeout", "Cedar", "In Progress → Done", "2 test cases drafted"],
@@ -197,7 +197,7 @@ FIGURES["delta-timeline"] = function () {
 // ---------------------------------------------------------------
 FIGURES["delta-agents"] = function () {
   const groups = [
-    ["Every day", [["Standup prep", "Who moved what, who's stuck, what to ask about"]]],
+    ["Every day", [["Standup prep", "What moved, what's waiting, who might need a hand"]]],
     ["Every sprint", [
       ["Sprint planning advisor", "Checks the plan against capacity and past velocity"],
       ["Backlog health check", "Flags stories that aren't ready to start"],
@@ -205,7 +205,7 @@ FIGURES["delta-agents"] = function () {
       ["Sprint newsletter", "A one-page update leadership can read in two minutes"],
     ]],
     ["Planning", [
-      ["Story writer", "Turns a rough idea into a story with acceptance criteria"],
+      ["★ Story writer", "Turns a plain-English idea into a complete story, using context from Agility"],
       ["Feature breakdown", "Splits a feature into right-sized stories"],
       ["Increment planner", "Drafts the quarterly plan and release schedule"],
     ]],
@@ -234,7 +234,7 @@ FIGURES["delta-agents"] = function () {
 FIGURES["delta-insight"] = function () {
   const rows = [
     ["Smaller stories were much easier to estimate accurately", "Split stories to 3 points or less", "Story splitter + estimate-accuracy report"],
-    ["Testing was where work most often waited", "Track tester load every day", "QE load ratio in standup prep + capacity heatmap"],
+    ["The testing stage was where stories spent the most time", "Track tester load every day", "QE load ratio in standup prep + capacity heatmap"],
     ["Passenger-facing changes carry the most risk at release", "Put them behind feature flags", "Recommendation I brought to the working session"],
   ];
   return `<div class="ins"><div class="ins-h"><span>What the data showed</span><span>What I recommended</span><span>What I built</span></div>${rows
@@ -261,20 +261,20 @@ FIGURES["delta-kits"] = function () {
 // ---------------------------------------------------------------
 FIGURES["delta-bottlenecks"] = function () {
   const rows = [
-    ["Standup prep was manual", "Before every standup, Scrum Masters clicked through Agility story by story to work out who had moved what and who was stuck.", "Standup prep report: moved vs. didn't move, blocked and stale work, and tester load, in one click."],
-    ["Status updates were written by hand", "Sprint newsletters, weekly decks, release notes, and quarterly reports were rebuilt from scratch every time, by copying numbers out of Agility.", "Writing agents that draft each one from live data, with rules so they never overstate progress."],
-    ["Release status took 30+ minutes to piece together", "Knowing where a monthly release stood meant querying five teams' work separately and adding it up.", "Release Readiness dashboard: one scorecard across all five teams, with at-risk work flagged."],
-    ["Work could reach Done without being tested", "Nothing flagged a story that skipped testing, and test cases were written by hand.", "QA dashboard that reads each story's status history, plus an agent that drafts test cases from acceptance criteria."],
-    ["Planning started with stories that weren't ready", "Stories came into planning missing acceptance criteria, unestimated, or too big, and plans could exceed the team's capacity.", "Backlog health check, planning advisor, story writer, and story splitter."],
-    ["Nobody could see trends over time", "Agility shows what's true today, not how work moved over weeks, so where time went was a matter of opinion.", "A daily data pipeline, and the analysis it made possible (below)."],
+    ["Standup prep took a lot of clicking", "Getting ready for each standup meant going through Agility story by story to see what had changed since yesterday.", "Standup prep report: what moved, what's waiting, and tester load, in one click."],
+    ["Status updates were assembled by hand", "Newsletters, weekly decks, release notes, and quarterly reports were rebuilt each time by pulling numbers out of Agility and writing them up.", "Writing agents that draft each one from live data, with rules that keep them accurate."],
+    ["User stories were written from scratch", "Every story was typed out by hand: the description, acceptance criteria, sizing, and the link back to its feature. Careful work, but it added up, story after story.", "Story Writer, the agent I'm proudest of: describe the work in plain English, and it pulls what it needs from Agility to draft a complete story. Alongside it, a backlog health check, story splitter, and planning advisor.", true],
+    ["Release status took 30+ minutes to piece together", "Knowing where a monthly release stood meant looking up five teams' work separately and adding it up.", "Release Readiness dashboard: one scorecard across all five teams, with at-risk work flagged."],
+    ["Confirming every story was tested took digging", "Agility doesn't flag a story whose history skips the testing step, so checking meant going story by story, and test cases were written by hand.", "QA dashboard that reads each story's status history, plus an agent that drafts test cases from acceptance criteria."],
+    ["History wasn't visible in the tools", "Agility shows where work stands today, not how it moved over weeks, so there was no easy way to see trends.", "A daily data pipeline, and the analysis it made possible (below)."],
   ];
   return `<div class="bn">${rows
-    .map(([t, saw, built], i) => `
-      <div class="bn-r">
+    .map(([t, saw, built, star], i) => `
+      <div class="bn-r${star ? " bn-star" : ""}">
         <span class="bn-n">${String(i + 1).padStart(2, "0")}</span>
         <div class="bn-saw"><b>${t}</b><p>${saw}</p></div>
         <span class="bn-arrow" aria-hidden="true">→</span>
-        <div class="bn-built"><span>What I built</span><p>${built}</p></div>
+        <div class="bn-built"><span>${star ? "★ What I built" : "What I built"}</span><p>${built}</p></div>
       </div>`)
     .join("")}</div>`;
 };
