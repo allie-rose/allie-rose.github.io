@@ -31,12 +31,12 @@ window.PORTFOLIO = {
       title: "Internal AI Consulting at Delta",
       year: "2026",
       description:
-        "Delta gave me a one-line brief: \"optimize workflow using AI.\" I built a toolkit five software teams could install in one click, saving each Scrum Master 5–8 hours a sprint. Then I modeled their data in a way nobody had before, and led a 100-person meeting on what it showed.",
+        "Delta gave me a one-line brief: \"optimize workflow using AI.\" I built a toolkit five software teams could install in one click, saving each Scrum Master 5–8 hours a sprint. I also modeled their sprint data in a new way and found two clear ways to make planning more accurate, which I presented to a 100-person meeting.",
       tags: ["AI Strategy", "AI Agents", "Python", "Dashboards"],
       link: "",
       details: {
         summary:
-          "Delta gave me a one-line brief: \"optimize workflow using AI.\" By the end of the summer, the five software teams behind Delta's in-flight Wi-Fi had a toolkit they could install in one click: three dashboards, 17 AI agents, and a data pipeline. Along the way I showed, with data, that the teams' estimates were badly off, presented it to a 100-person meeting, and led the session on how to fix it.",
+          "Delta gave me a one-line brief: \"optimize workflow using AI.\" By the end of the summer, the five software teams behind Delta's in-flight Wi-Fi had a toolkit they could install in one click: three dashboards, 17 AI agents, and a data pipeline. I also modeled the teams' sprint data in a new way, found two clear ways to make their planning more accurate, presented them to a 100-person meeting, and led the working session on putting them into practice.",
         role: "Data Analytics and AI Intern, Delta Air Lines (May–Aug 2026)",
         stack: ["Python", "Flask", "Agility REST + History API", "SQLite", "Kiro AI IDE", "PowerShell / bash"],
         stats: [
@@ -54,11 +54,11 @@ window.PORTFOLIO = {
             figure: "delta-timeline",
           },
           {
-            h: "The analysis nobody had done",
+            h: "A new way to look at the data",
             p: [
-              "Nobody had checked the teams' estimates against what actually happened. I modeled their work in a way nobody had before: a daily history of every story, so I could compare estimates to how long work actually took, and split each story's time into development vs. waiting on testing. I ran it on 66 finished stories across three sprints.",
-              "The estimates were badly off, and the bigger the story, the worse they were. Work was also piling up waiting for testers, which nobody had been measuring.",
-              "I presented the findings to a meeting of about 100 people. Then I facilitated a follow-up session on how to fix it, starting from my own recommendations, and built tools to back them up. It kicked off a review of how the teams estimate work.",
+              "I wanted to see how well sprint plans matched what actually happened, so I modeled the teams' work in a way that hadn't been done before: a daily history of every story, comparing the time planned with the time it took, and splitting each story's time into development and testing. I ran it on 66 finished stories across three sprints.",
+              "Two patterns stood out. Smaller stories were much easier to estimate accurately, so breaking work down would make plans more reliable. And testing was where work most often waited, so tester capacity was worth tracking right alongside developer capacity.",
+              "I presented the findings to a meeting of about 100 people, then facilitated a working session where we turned them into changes, starting from my recommendations. I built tools to support those changes, and the teams began reviewing how they estimate work.",
             ],
             figure: "delta-insight",
           },
@@ -104,7 +104,7 @@ window.PORTFOLIO = {
             list: [
               "5–8 hours saved per sprint for each Scrum Master.",
               "Release status went from 30+ minutes of digging to one click; the release manager and five team leads used it.",
-              "Presented my estimation analysis to a 100-person meeting and facilitated the follow-up on fixing it, which started a review of how the teams estimate work.",
+              "Presented my planning analysis to a 100-person meeting and facilitated the follow-up session on putting it into practice, which started a review of how the teams estimate work.",
             ],
           },
         ],
@@ -325,7 +325,7 @@ window.PORTFOLIO = {
       points: [
         "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams, found the six biggest bottlenecks, and built the fix.",
         "Built three Python/Flask dashboards (10 sprint reports, release readiness, QA tracking) and 15+ AI agents that write newsletters, release notes, and exec decks. Saves each Scrum Master 5–8 hours per sprint.",
-        "Modeled sprint data in a way the teams hadn't before (66 stories, development vs. testing time) and showed estimates were badly off; presented the findings to a 100-person meeting and facilitated the session on fixing them, starting a review of estimation practices.",
+        "Modeled sprint data in a new way (66 stories, development vs. testing time) and found two clear ways to make planning more accurate; presented them to a 100-person meeting and facilitated the session on putting them into practice, which started a review of estimation practices.",
         "Shipped it as one-click installers with an auto-updater and onboarding docs, so the teams kept using it after I left.",
       ],
     },

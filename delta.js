@@ -114,7 +114,7 @@ DEMOS["delta-dashboard"] = function (el) {
           ["3 pts", "11", "3", "4.8", bar(27, "warn")],
           ["5 pts", "6", "5", "9.5", bar(17, "bad")],
           ["8 pts", "3", "8", "14.0", bar(0, "bad")],
-        ]) + `<p class="dd-note">The bigger the story, the further off the estimate. That's why the splitter exists.</p>`,
+        ]) + `<p class="dd-note">Smaller stories land much closer to plan. That's why the splitter exists.</p>`,
     },
     splitter: {
       name: "Story splitter",
@@ -185,7 +185,7 @@ FIGURES["delta-timeline"] = function () {
     ["First agents", "Started small: two agents for one team, a sprint newsletter and a sprint closeout summary."],
     ["One toolkit for five teams", "Generalized them into a shared toolkit and wrote steering files so the agents knew every team's dates, people, and rules."],
     ["Moved the mechanical work to code", "Realized five agents were just doing math. Rebuilt them as a dashboard: 2–4 seconds per report instead of 60–90, and zero AI tokens. Then added release and QA dashboards."],
-    ["Found what nobody had measured", "Built a daily history of every story and modeled it in a way the teams never had. Showed their estimates were badly off, presented it to a 100-person meeting, and facilitated the session on how to fix it."],
+    ["A new way to look at the data", "Built a daily history of every story and modeled it in a way that hadn't been done before. Found two clear ways to make planning more accurate, presented them to a 100-person meeting, and facilitated the session on putting them into practice."],
     ["Shipped it", "Packaged everything as one-click installers with an auto-updater and onboarding docs, then presented the whole thing to leadership."],
   ];
   return `<ol class="tl">${steps.map(([h, p], i) => `<li><span class="tl-n">${String(i + 1).padStart(2, "0")}</span><div><b>${h}</b><p>${p}</p></div></li>`).join("")}</ol>`;
@@ -232,9 +232,9 @@ FIGURES["delta-agents"] = function () {
 // ---------------------------------------------------------------
 FIGURES["delta-insight"] = function () {
   const rows = [
-    ["Big stories were almost never estimated right", "Split stories to 3 points or less", "Story splitter + estimate-accuracy report"],
-    ["Work was piling up waiting for testers, and nobody was measuring it", "Track tester load every day", "QE load ratio in standup prep + capacity heatmap"],
-    ["Passenger-facing changes were risky to release", "Put them behind feature flags", "Recommendation I brought to the fix-it session"],
+    ["Smaller stories were much easier to estimate accurately", "Split stories to 3 points or less", "Story splitter + estimate-accuracy report"],
+    ["Testing was where work most often waited", "Track tester load every day", "QE load ratio in standup prep + capacity heatmap"],
+    ["Passenger-facing changes carry the most risk at release", "Put them behind feature flags", "Recommendation I brought to the working session"],
   ];
   return `<div class="ins"><div class="ins-h"><span>What the data showed</span><span>What I recommended</span><span>What I built</span></div>${rows
     .map((r) => `<div class="ins-r">${r.map((c) => `<div>${c}</div>`).join("")}</div>`)
