@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <meta name="description" content="AI projects, experiments, and work by Allie Rose." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="mark" id="mark"></a>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="theme" class="theme-btn" aria-label="Toggle light and dark mode">◐</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <p class="kicker" id="location"></p>
+      <h1 class="name" id="name"></h1>
+      <p class="tagline" id="tagline"></p>
+
+      <div class="board" aria-label="Selected work">
+        <div class="board-head">
+          <span>Selected work</span>
+          <span class="board-clock" id="clock"></span>
+        </div>
+        <div class="board-cols" aria-hidden="true" id="board-cols"></div>
+        <div id="board-rows"></div>
+      </div>
+
+      <p class="intro" id="intro"></p>
+      <div class="hero-links" id="hero-links"></div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+    <section id="work" class="wrap section">
+      <div class="section-head"><span class="label">01</span><h2>Work</h2></div>
+      <div class="rows" id="work-rows"></div>
+    </section>
+
+    <section id="research" class="wrap section">
+      <div class="section-head"><span class="label">02</span><h2>Research</h2></div>
+      <div class="rows" id="research-rows"></div>
+    </section>
+
+    <section id="experience" class="wrap section">
+      <div class="section-head"><span class="label">03</span><h2>Experience</h2></div>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section id="contact" class="wrap section contact">
+      <div class="section-head"><span class="label">04</span><h2>Say hi</h2></div>
+      <a class="big-email" id="email-text" href="#"></a>
+      <div class="contact-btns">
+        <a class="btn" id="email-btn" href="#">Email me</a>
+        <a class="btn ghost" id="linkedin-btn" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer"><span id="footer"></span> · <a id="footer-email" href="#"></a> · <a id="footer-li" href="#" target="_blank" rel="noopener">LinkedIn</a></footer>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
