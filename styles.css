@@ -50,6 +50,8 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
 .nav nav { display: flex; gap: 1.5rem; }
 .nav nav a { color: var(--muted); font: .78rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 .nav nav a:hover { color: var(--text); }
+.nav-resume { font: 600 .74rem var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--accent-ink); background: var(--accent); padding: 7px 11px; border-radius: 5px; white-space: nowrap; }
+.nav-resume:hover { filter: brightness(1.08); }
 .theme-btn { background: none; border: 1px solid var(--border); color: var(--text); border-radius: 6px; width: 34px; height: 34px; cursor: pointer; }
 
 /* ---------- Hero ---------- */
