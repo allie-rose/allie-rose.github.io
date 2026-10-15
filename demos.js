@@ -390,3 +390,32 @@ DEMOS["vending"] = function (el) {
   });
   pick(0);
 };
+
+// ---------------------------------------------------------------
+// Static figures that sit inside a page section (section.figure).
+// ---------------------------------------------------------------
+window.FIGURES = {};
+
+// How the Delta toolkit fit together. No internal names or data.
+FIGURES["delta-architecture"] = function () {
+  return `
+  <div class="arch" role="img" aria-label="Diagram: a Scrum Master uses either dashboards or AI agents, both reading from Agility">
+    <div class="arch-user">Scrum Master, release manager, or tester</div>
+    <div class="arch-split">
+      <div class="arch-lane">
+        <div class="arch-q">Needs an exact answer</div>
+        <div class="arch-box arch-accent"><b>3 dashboards</b><span>Python + Flask, on their own computer</span></div>
+        <div class="arch-out">10 sprint reports · release scorecard · QA checks<br><em>2–4 seconds, zero AI tokens</em></div>
+      </div>
+      <div class="arch-lane">
+        <div class="arch-q">Needs something written</div>
+        <div class="arch-box arch-accent"><b>15+ AI agents</b><span>Markdown instructions in Kiro</span></div>
+        <div class="arch-side">reads <b>steering files</b>: dates, rosters, status rules, formats</div>
+        <div class="arch-out">Newsletters · release notes · exec decks · test cases</div>
+      </div>
+    </div>
+    <div class="arch-source"><b>Digital.ai Agility</b><span>REST API + status History API</span></div>
+    <div class="arch-pipe"><b>Daily pipeline</b> snapshots Agility into SQLite → cycle time, bottlenecks, estimate accuracy</div>
+    <div class="arch-ship">Shipped as one-click installers (Windows + Mac) with an auto-updater</div>
+  </div>`;
+};

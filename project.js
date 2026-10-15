@@ -36,6 +36,7 @@
         <h2>${esc(s.h)}</h2>
         ${(s.p || []).map((t) => `<p>${esc(t)}</p>`).join("")}
         ${s.list ? `<ul>${s.list.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
+        ${s.figure && window.FIGURES && window.FIGURES[s.figure] ? `<div class="figure">${window.FIGURES[s.figure]()}</div>` : ""}
         ${s.code ? `<pre class="code"><code>${esc(s.code)}</code></pre>` : ""}
         ${s.quote ? `<blockquote class="pull">“${esc(s.quote)}”<cite>From my write-up</cite></blockquote>` : ""}
       </section>`

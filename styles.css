@@ -143,7 +143,8 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
 .stat + .stat { padding-left: 1rem; }
 .stat b { display: block; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; letter-spacing: -.03em; color: var(--accent-text); line-height: 1.1; }
 .stat span { font: .72rem var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
-.block { display: grid; grid-template-columns: 260px 1fr; gap: 2rem; padding: 2.5rem 0; border-top: 1px solid var(--border); }
+.block { display: grid; grid-template-columns: 260px 1fr; column-gap: 2rem; row-gap: 0; padding: 2.5rem 0; border-top: 1px solid var(--border); }
+.block > h2 { grid-row: 1 / span 30; align-self: start; }
 .block h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -.02em; }
 .block h2::before { counter-increment: sec; content: counter(sec, decimal-leading-zero); display: block; font: .75rem var(--mono); color: var(--accent-text); margin-bottom: .5rem; }
 .block > :not(h2) { grid-column: 2; }
@@ -257,6 +258,7 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
   .timeline > li { grid-template-columns: 1fr; gap: .25rem; }
   .block { grid-template-columns: 1fr; gap: .75rem; }
   .block > :not(h2) { grid-column: 1; }
+  .block > h2 { grid-row: auto; margin-bottom: .5rem; }
   .stat { border-right: none; border-bottom: 1px solid var(--border); padding-left: 0 !important; }
   .stat:last-child { border-bottom: none; }
   .dm-fl-row { grid-template-columns: 1fr 1fr 1fr; }
@@ -270,3 +272,23 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
 .code-link { margin: 1.5rem 0 0; }
+
+/* Architecture figure */
+.figure { margin-top: 1.25rem; }
+.arch { display: grid; gap: .6rem; max-width: 760px; font-size: .9rem; }
+.arch b { font-weight: 700; }
+.arch-user, .arch-source, .arch-pipe, .arch-ship { text-align: center; padding: .7rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); }
+.arch-user { font: 600 .78rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+.arch-split { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.arch-lane { display: grid; gap: .45rem; align-content: start; padding: .8rem; border: 1px dashed var(--border); border-radius: 10px; }
+.arch-q { font: .7rem var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.arch-box { padding: .7rem .8rem; border-radius: 8px; display: grid; gap: .15rem; }
+.arch-box span { font-size: .8rem; }
+.arch-accent { background: var(--accent); color: var(--accent-ink); }
+.arch-side { font-size: .8rem; color: var(--muted); padding-left: .6rem; border-left: 2px solid var(--accent); }
+.arch-out { font-size: .82rem; }
+.arch-out em { color: var(--accent-text); font-style: normal; font: .75rem var(--mono); }
+.arch-source { display: grid; gap: .1rem; border-color: var(--accent); }
+.arch-source span, .arch-pipe, .arch-ship { font-size: .82rem; }
+.arch-ship { color: var(--muted); border-style: dashed; }
+@media (max-width: 760px) { .arch-split { grid-template-columns: 1fr; } }
