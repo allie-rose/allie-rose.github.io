@@ -182,8 +182,8 @@ DEMOS["delta-dashboard"] = function (el) {
 // ---------------------------------------------------------------
 FIGURES["delta-timeline"] = function () {
   const steps = [
-    ["Discovery", "Got a one-line brief: \"optimize workflow using AI.\" Spent the first weeks with the Scrum Masters and team leads figuring out where their time went, and found six bottlenecks."],
-    ["First agents", "Started small: two agents for one team, a sprint newsletter and a sprint closeout summary."],
+    ["Discovery", "Got a one-line brief: \"optimize workflow using AI.\" Before building anything, spent the first weeks analyzing how the teams worked, from planning through release, and pinned down six observable bottlenecks."],
+    ["First agents", "Started with the most obvious bottleneck, hand-written status updates: two agents for one team, a sprint newsletter and a sprint closeout summary."],
     ["One toolkit for five teams", "Generalized them into a shared toolkit and wrote steering files so the agents knew every team's dates, people, and rules."],
     ["Moved the mechanical work to code", "Realized five agents were just doing math. Rebuilt them as a dashboard: 2–4 seconds per report instead of 60–90, and zero AI tokens. Then added release and QA dashboards."],
     ["A new way to look at the data", "Built a daily history of every story and modeled it in a way that hadn't been done before. Found two clear ways to make planning more accurate, presented them to a 100-person meeting, and facilitated the session on putting them into practice."],
@@ -253,5 +253,28 @@ FIGURES["delta-kits"] = function () {
   ];
   return `<div class="kits">${kits
     .map(([n, who, items], i) => `<div class="kit${i === 1 ? " kit-main" : ""}"><b>${n}</b><span>${who}</span><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div>`)
+    .join("")}</div>`;
+};
+
+// ---------------------------------------------------------------
+// Each bottleneck I observed, and the tool built to address it
+// ---------------------------------------------------------------
+FIGURES["delta-bottlenecks"] = function () {
+  const rows = [
+    ["Standup prep was manual", "Before every standup, Scrum Masters clicked through Agility story by story to work out who had moved what and who was stuck.", "Standup prep report: moved vs. didn't move, blocked and stale work, and tester load, in one click."],
+    ["Status updates were written by hand", "Sprint newsletters, weekly decks, release notes, and quarterly reports were rebuilt from scratch every time, by copying numbers out of Agility.", "Writing agents that draft each one from live data, with rules so they never overstate progress."],
+    ["Release status took 30+ minutes to piece together", "Knowing where a monthly release stood meant querying five teams' work separately and adding it up.", "Release Readiness dashboard: one scorecard across all five teams, with at-risk work flagged."],
+    ["Work could reach Done without being tested", "Nothing flagged a story that skipped testing, and test cases were written by hand.", "QA dashboard that reads each story's status history, plus an agent that drafts test cases from acceptance criteria."],
+    ["Planning started with stories that weren't ready", "Stories came into planning missing acceptance criteria, unestimated, or too big, and plans could exceed the team's capacity.", "Backlog health check, planning advisor, story writer, and story splitter."],
+    ["Nobody could see trends over time", "Agility shows what's true today, not how work moved over weeks, so where time went was a matter of opinion.", "A daily data pipeline, and the analysis it made possible (below)."],
+  ];
+  return `<div class="bn">${rows
+    .map(([t, saw, built], i) => `
+      <div class="bn-r">
+        <span class="bn-n">${String(i + 1).padStart(2, "0")}</span>
+        <div class="bn-saw"><b>${t}</b><p>${saw}</p></div>
+        <span class="bn-arrow" aria-hidden="true">→</span>
+        <div class="bn-built"><span>What I built</span><p>${built}</p></div>
+      </div>`)
     .join("")}</div>`;
 };

@@ -75,14 +75,11 @@
   // Dark mode toggle (remembers choice)
   const root = document.documentElement;
   try {
-    const saved = localStorage.getItem("theme");
+    const saved = localStorage.getItem("theme-v2");
     if (saved) root.dataset.theme = saved;
   } catch (e) {}
   $("theme").addEventListener("click", () => {
-    const light = root.dataset.theme
-      ? root.dataset.theme === "light"
-      : matchMedia("(prefers-color-scheme: light)").matches;
-    root.dataset.theme = light ? "dark" : "light";
-    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+    try { localStorage.setItem("theme-v2", root.dataset.theme); } catch (e) {}
   });
 })();

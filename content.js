@@ -31,12 +31,12 @@ window.PORTFOLIO = {
       title: "Internal AI Consulting at Delta",
       year: "2026",
       description:
-        "Delta gave me a one-line brief: \"optimize workflow using AI.\" I built a toolkit five software teams could install in one click, saving each Scrum Master 5–8 hours a sprint. I also modeled their sprint data in a new way and found two clear ways to make planning more accurate, which I presented to a 100-person meeting.",
+        "Delta gave me a one-line brief: \"optimize workflow using AI.\" I analyzed how five software teams worked, found six bottlenecks, and built a tool for each one, saving every Scrum Master 5–8 hours a sprint. I also modeled their sprint data in a new way and found two clear ways to make planning more accurate, which I presented to a 100-person meeting.",
       tags: ["AI Strategy", "AI Agents", "Python", "Dashboards"],
       link: "",
       details: {
         summary:
-          "Delta gave me a one-line brief: \"optimize workflow using AI.\" By the end of the summer, the five software teams behind Delta's in-flight Wi-Fi had a toolkit they could install in one click: three dashboards, 17 AI agents, and a data pipeline. I also modeled the teams' sprint data in a new way, found two clear ways to make their planning more accurate, presented them to a 100-person meeting, and led the working session on putting them into practice.",
+          "Delta gave me a one-line brief: \"optimize workflow using AI.\" Before building anything, I spent time analyzing how the five software teams behind Delta's in-flight Wi-Fi actually worked and pinned down six bottlenecks. Every tool I built answers one of them: three dashboards, 17 AI agents, and a data pipeline, all installable in one click. I also modeled the teams' sprint data in a new way, found two clear ways to make their planning more accurate, presented them to a 100-person meeting, and led the working session on putting them into practice.",
         role: "Data Analytics and AI Intern, Delta Air Lines (May–Aug 2026)",
         stack: ["Python", "Flask", "Agility REST + History API", "SQLite", "Kiro AI IDE", "PowerShell / bash"],
         stats: [
@@ -54,6 +54,13 @@ window.PORTFOLIO = {
             figure: "delta-timeline",
           },
           {
+            h: "Every tool started with a bottleneck",
+            p: [
+              "I didn't start by building. I spent my first weeks analyzing how the five teams actually worked, following work from planning through release and noting every place people did the same manual steps over and over or waited on information. That gave me six bottlenecks I could point to. Every tool I built targets one of them.",
+            ],
+            figure: "delta-bottlenecks",
+          },
+          {
             h: "A new way to look at the data",
             p: [
               "I wanted to see how well sprint plans matched what actually happened, so I modeled the teams' work in a way that hadn't been done before: a daily history of every story, comparing the time planned with the time it took, and splitting each story's time into development and testing. I ran it on 66 finished stories across three sprints.",
@@ -65,7 +72,7 @@ window.PORTFOLIO = {
           {
             h: "The design",
             p: [
-              "Not everything needed AI. Questions with exact answers (what's blocked, what skipped testing) are faster and more trustworthy as code that reads the data directly. Writing (newsletters, release notes, exec decks) is where AI earns its keep. So I built both, on top of the same data. Moving five agents' worth of math into a dashboard cut each report from 60–90 seconds to 2–4, with zero AI tokens.",
+              "Each bottleneck also told me what kind of tool it needed. Not everything needed AI. Questions with exact answers (what's blocked, what skipped testing) are faster and more trustworthy as code that reads the data directly. Writing (newsletters, release notes, exec decks) is where AI earns its keep. So I built both, on top of the same data. Moving five agents' worth of math into a dashboard cut each report from 60–90 seconds to 2–4, with zero AI tokens.",
             ],
             figure: "delta-architecture",
           },
@@ -323,7 +330,7 @@ window.PORTFOLIO = {
       org: "Delta Air Lines · Internal AI consulting",
       dates: "May – Aug 2026",
       points: [
-        "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams, found the six biggest bottlenecks, and built the fix.",
+        "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams; analyzed how work actually flowed from planning to release and identified six bottlenecks, then built a tool targeting each one.",
         "Built three Python/Flask dashboards (10 sprint reports, release readiness, QA tracking) and 15+ AI agents that write newsletters, release notes, and exec decks. Saves each Scrum Master 5–8 hours per sprint.",
         "Modeled sprint data in a new way (66 stories, development vs. testing time) and found two clear ways to make planning more accurate; presented them to a 100-person meeting and facilitated the session on putting them into practice, which started a review of estimation practices.",
         "Shipped it as one-click installers with an auto-updater and onboarding docs, so the teams kept using it after I left.",
