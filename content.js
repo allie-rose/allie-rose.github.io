@@ -93,7 +93,7 @@ window.PORTFOLIO = {
       description:
         "There was something I wished Delta.com had: a way to tell if a fare is actually a good price. It didn't exist, so I built it as a Chrome extension.",
       tags: ["Product Idea", "LLMs", "Browser Extension", "JavaScript"],
-      link: "",
+      link: "https://github.com/allie-rose/delta-helper",
       details: {
         summary:
           "Delta.com lists prices but never tells you whether one is a good deal. I wanted that answer right next to the fare, so I built it: hover over a price and a badge says cheap, average, or expensive for that route, with a one-line reason from Gemini.",
@@ -126,7 +126,7 @@ window.PORTFOLIO = {
             h: "What's not done yet",
             list: [
               "The \"Analyze This Flight\" button in the popup still says \"Coming soon.\"",
-              "The API key lives inside the extension. Before sharing it, I'd move the call to a small server.",
+              "The API key sits in a local config file on my computer. To share the extension, I'd move the Gemini call to a small server.",
               "Ratings come from Gemini's general sense of prices, not real fare history. Plugging in historical fares would make them trustworthy.",
             ],
           },
@@ -141,7 +141,7 @@ window.PORTFOLIO = {
       description:
         "Type a coffee order the way you'd say it and get the exact drink and price. I built it on Jev, a model that returns probabilities instead of text, so I could see how sure it was about every detail. 19 of 20 test orders right.",
       tags: ["LLMs", "Python", "New AI tech"],
-      link: "",
+      link: "https://github.com/allie-rose/coffee-order-assistant",
       details: {
         summary:
           "\"Venti caramel mocha with whip\" isn't how a menu is written. I built an assistant that turns orders like that into an exact drink and price, and asks a question when it isn't sure. It runs on Jev, a newer kind of model from TypeSafe that answers with probabilities instead of writing text.",

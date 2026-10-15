@@ -269,3 +269,4 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+.code-link { margin: 1.5rem 0 0; }

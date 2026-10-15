@@ -53,6 +53,7 @@
       ${x.role ? `<span><b>Role</b> ${esc(x.role)}</span>` : ""}
       ${x.stack ? `<span><b>Built with</b> ${x.stack.map(esc).join(", ")}</span>` : ""}
     </div>
+    ${p.link ? `<p class="code-link"><a class="btn" href="${esc(p.link)}" target="_blank" rel="noopener">View the code on GitHub ↗</a></p>` : ""}
     ${stats ? `<div class="stats">${stats}</div>` : ""}
     ${
       x.demo && window.DEMOS && window.DEMOS[x.demo]
@@ -63,7 +64,6 @@
         : ""
     }
     ${sections}
-    ${p.link ? `<p><a class="btn" href="${esc(p.link)}" target="_blank" rel="noopener">View the original →</a></p>` : ""}
     <nav class="pager">
       <a href="project.html?p=${esc(prev.slug)}">← ${esc(prev.title)}</a>
       <a href="project.html?p=${esc(next.slug)}">${esc(next.title)} →</a>
