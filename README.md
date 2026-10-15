@@ -10,11 +10,14 @@ To add a résumé, put `resume.pdf` in this folder and set `resume: "resume.pdf"
 
 ## Where it lives
 
-The site is hosted for free on GitHub Pages at **https://allierose923.github.io**, from the repo `allierose923/allierose923.github.io`.
+The site is hosted for free in two places, both built from the repo `allierose923/allierose923.github.io`:
+
+- **Vercel:** https://allierose.vercel.app
+- **GitHub Pages:** https://allierose923.github.io
 
 ## How to update it
 
-Edit `content.js` (you can even do it on github.com: open the file, click the pencil icon, and commit). GitHub Pages republishes the site about a minute after every change.
+Edit `content.js` (you can even do it on github.com: open the file, click the pencil icon, and commit). Both Vercel and GitHub Pages republish the site about a minute after every change.
 
 ## Preview on your computer
 
