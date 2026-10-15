@@ -396,3 +396,4 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
   .ins-r div + div { border-top: 0; padding-top: 0; }
   .kits { grid-template-columns: 1fr; }
 }
+.dd-from { font: .66rem var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--accent-text); margin-bottom: .2rem; }

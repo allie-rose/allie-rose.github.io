@@ -47,7 +47,7 @@ window.PORTFOLIO = {
         ],
         demo: "delta-dashboard",
         demoNote:
-          "A working recreation of the Sprint Dashboard I built. Click through the reports. Every team, person, story, and number here is made up; the real one runs on Delta's data.",
+          "A working recreation of the dashboards I built. At Delta these were three separate apps (Sprint Operations, Release Readiness, and QA); I've combined them here so you can click through everything in one place. Every team, person, story, and number is made up.",
         sections: [
           {
             h: "How the summer went",
