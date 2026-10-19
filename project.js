@@ -15,7 +15,10 @@
     ...d.projects.map((p) => ({ ...p, kind: "Project" })),
     ...d.research.map((r) => ({ ...r, kind: "Research", description: r.summary })),
   ];
-  const slug = new URLSearchParams(location.search).get("p");
+  // Old page addresses that should still open the renamed page
+  const renamed = { "delta-helper": "fare-check" };
+  const asked = new URLSearchParams(location.search).get("p");
+  const slug = renamed[asked] || asked;
   const i = all.findIndex((x) => x.slug === slug);
   const p = all[i];
 

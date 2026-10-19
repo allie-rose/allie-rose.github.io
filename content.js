@@ -128,14 +128,14 @@ window.PORTFOLIO = {
       },
     },
     {
-      slug: "delta-helper",
+      slug: "fare-check",
       board: { title: "FARE CHECK", via: "CHROME", status: "LIVE DEMO" }, // shown on the homepage departures board
       title: "Fare Check (for delta.com)",
       year: "2026",
       description:
         "A feature idea for delta.com: a quick read on whether a fare is a good price for that route, right next to it. I built it as a Chrome extension, and thought through how it could help Delta keep shoppers, sell upgrades, and learn how customers see its prices.",
       tags: ["Product Idea", "LLMs", "Browser Extension", "JavaScript"],
-      link: "https://github.com/allie-rose/delta-helper",
+      link: "https://github.com/allie-rose/fare-check",
       details: {
         summary:
           "I had an idea for a feature that would make booking on delta.com even easier: a quick read on whether a fare is a good price for that route, right where you're already looking. Instead of just imagining it, I built it as a Chrome extension. Hover over a price and a badge rates it cheap, average, or expensive for that route, with a one-line reason from Gemini. Then I thought about what it could do for Delta as a business, not just for shoppers.",
