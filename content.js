@@ -31,12 +31,12 @@ window.PORTFOLIO = {
       title: "Internal AI Consulting at Delta",
       year: "2026",
       description:
-        "Delta gave me a one-line brief: \"optimize workflow using AI.\" I analyzed how five software teams worked, found six bottlenecks, and built a tool for each one, saving every Scrum Master 5–8 hours a sprint. I also modeled their sprint data in a new way and found two clear ways to make planning more accurate, which I presented to a 100-person meeting.",
+        "Delta gave me a one-line brief: \"optimize workflow using AI.\" I learned how five software teams worked, found six places where better tooling could save them time, and built a tool for each one, saving every Scrum Master 5–8 hours a sprint. I also modeled their sprint data in a new way and found two clear ways to make planning more accurate, which I presented to a 100-person meeting.",
       tags: ["AI Strategy", "AI Agents", "Python", "Dashboards"],
       link: "",
       details: {
         summary:
-          "Delta gave me a one-line brief: \"optimize workflow using AI.\" Before building anything, I spent time analyzing how the five software teams behind Delta's in-flight Wi-Fi actually worked and pinned down six bottlenecks. Every tool I built answers one of them: three dashboards, 17 AI agents, and a data pipeline, all installable in one click. I also modeled the teams' sprint data in a new way, found two clear ways to make their planning more accurate, presented them to a 100-person meeting, and led the working session on putting them into practice.",
+          "Delta gave me a one-line brief: \"optimize workflow using AI.\" Before building anything, I spent time learning how the five software teams behind Delta's in-flight Wi-Fi worked and found six places where better tooling could save them time. Every tool I built answers one of them: three dashboards, 17 AI agents, and a data pipeline, all installable in one click. I also modeled the teams' sprint data in a new way, found two clear ways to make their planning more accurate, presented them to a 100-person meeting, and led the working session on putting them into practice.",
         role: "Data Analytics and AI Intern, Delta Air Lines (May–Aug 2026)",
         stack: ["Python", "Flask", "Agility REST + History API", "SQLite", "Kiro AI IDE", "PowerShell / bash"],
         stats: [
@@ -54,10 +54,10 @@ window.PORTFOLIO = {
             figure: "delta-timeline",
           },
           {
-            h: "Every tool started with a bottleneck",
+            h: "Every tool started with something I observed",
             p: [
-              "I didn't start by building. I spent my first weeks analyzing how the five teams actually worked, following work from planning through release and noting where the tools left people doing repetitive steps or hunting for information. That gave me six bottlenecks I could point to, and every tool I built targets one of them.",
-              "None of this was about the teams doing anything wrong. They were doing a lot of careful work by hand because their tools didn't do it for them. My job was to take that load off, so more of their time went to building.",
+              "I didn't start by building. I spent my first weeks learning how the five teams worked, following work from planning through release and looking for places where better tooling could save people time. I found six, and every tool I built targets one of them.",
+              "The teams were great to work with and generous with their time, and their process was careful and thorough. My goal was to take some of the routine work off their plates so more of their time could go to building.",
             ],
             figure: "delta-bottlenecks",
           },
@@ -73,7 +73,7 @@ window.PORTFOLIO = {
           {
             h: "The design",
             p: [
-              "Each bottleneck also told me what kind of tool it needed. Not everything needed AI. Questions with exact answers (what's blocked, what still needs testing) are faster and more trustworthy as code that reads the data directly. Writing (newsletters, release notes, exec decks) is where AI earns its keep. So I built both, on top of the same data. Moving five agents' worth of math into a dashboard cut each report from 60–90 seconds to 2–4, with zero AI tokens.",
+              "Each one also told me what kind of tool it needed. Not everything needed AI. Questions with exact answers (what's blocked, what still needs testing) are faster and more trustworthy as code that reads the data directly. Writing (newsletters, release notes, exec decks) is where AI earns its keep. So I built both, on top of the same data. Moving five agents' worth of math into a dashboard cut each report from 60–90 seconds to 2–4, with zero AI tokens.",
             ],
             figure: "delta-architecture",
           },
@@ -87,7 +87,7 @@ window.PORTFOLIO = {
           {
             h: "The one I'm proudest of: Story Writer",
             p: [
-              "Writing a good user story takes time: a clear description, acceptance criteria someone can test against, a size, and a link back to the feature it belongs to. Every story was being written from scratch.",
+              "Writing a good user story takes time: a clear description, acceptance criteria someone can test against, a size, and a link back to the feature it belongs to. Each one was written individually, which takes real time across five teams.",
               "Story Writer turns a one-line idea into a complete story. It pulls what it needs from Agility so the story fits the team's existing work, and follows the team's own conventions from the steering files. Here's the kind of thing it produces, recreated with made-up details:",
             ],
             code:
@@ -120,7 +120,7 @@ window.PORTFOLIO = {
             h: "Results",
             list: [
               "5–8 hours saved per sprint for each Scrum Master.",
-              "Release status went from 30+ minutes of digging to one click; the release manager and five team leads used it.",
+              "Release status went from 30+ minutes to one click; the release manager and five team leads used it.",
               "Presented my planning analysis to a 100-person meeting and facilitated the follow-up session on putting it into practice, which started a review of how the teams estimate work.",
             ],
           },
@@ -133,12 +133,12 @@ window.PORTFOLIO = {
       title: "Delta Helper Chrome Extension",
       year: "2026",
       description:
-        "There was something I wished Delta.com had: a way to tell if a fare is actually a good price. It didn't exist, so I built it as a Chrome extension.",
+        "A feature idea for delta.com: a quick read on whether a fare is a good price for that route, right next to it. I built it as a Chrome extension to see how it would work.",
       tags: ["Product Idea", "LLMs", "Browser Extension", "JavaScript"],
       link: "https://github.com/allie-rose/delta-helper",
       details: {
         summary:
-          "Delta.com lists prices but never tells you whether one is a good deal. I wanted that answer right next to the fare, so I built it: hover over a price and a badge says cheap, average, or expensive for that route, with a one-line reason from Gemini.",
+          "I had an idea for a feature that would make booking on delta.com even easier: a quick read on whether a fare is a good price for that route, right where you're already looking. Instead of just imagining it, I built it as a Chrome extension. Hover over a price and a badge rates it cheap, average, or expensive for that route, with a one-line reason from Gemini.",
         role: "Solo project",
         stack: ["JavaScript", "Chrome Extensions (Manifest V3)", "Gemini 2.0 Flash API"],
         stats: [
@@ -340,7 +340,7 @@ window.PORTFOLIO = {
       org: "Delta Air Lines · Internal AI consulting",
       dates: "May – Aug 2026",
       points: [
-        "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams; analyzed how work actually flowed from planning to release and identified six bottlenecks, then built a tool targeting each one.",
+        "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams; analyzed how work actually flowed from planning to release and found six places where better tooling could save time, then built a tool for each one.",
         "Built three Python/Flask dashboards (10 sprint reports, release readiness, QA tracking) and 15+ AI agents that write newsletters, release notes, and exec decks. Saves each Scrum Master 5–8 hours per sprint.",
         "Modeled sprint data in a new way (66 stories, development vs. testing time) and found two clear ways to make planning more accurate; presented them to a 100-person meeting and facilitated the session on putting them into practice, which started a review of estimation practices.",
         "Shipped it as one-click installers with an auto-updater and onboarding docs, so the teams kept using it after I left.",

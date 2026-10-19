@@ -29,7 +29,7 @@ DEMOS["delta-dashboard"] = function (el) {
       ${actual.map((v, i) => (v == null ? "" : `<circle cx="${X(i)}" cy="${Y(v)}" r="3.5" class="dd-dot"/>`)).join("")}
       <text x="36" y="28" class="dd-lbl">40 pts</text><text x="470" y="190" class="dd-lbl">Day 10</text><text x="30" y="190" class="dd-lbl">Day 0</text>
     </svg>
-    <p class="dd-note"><b>Day 8:</b> 17 points left, ideal is 8. ${pill("Behind by 9 pts", "warn")} Most of the gap is 2 stories waiting on test.</p>`;
+    <p class="dd-note"><b>Day 8:</b> 17 points left, ideal is 8. ${pill("9 pts to go vs. plan", "warn")} Two stories are in test and should close soon.</p>`;
   };
 
   const heat = () => {
@@ -38,7 +38,7 @@ DEMOS["delta-dashboard"] = function (el) {
     const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
     return `<div class="dd-heat"><span></span>${days.map((d) => `<span class="dd-h">${d}</span>`).join("")}
       ${people.map((p, i) => `<span class="dd-h dd-name">${p}</span>${load[i].map((v) => `<span class="dd-cell dd-l${v}" title="${v} active stories">${v}</span>`).join("")}`).join("")}
-    </div><p class="dd-note">Active stories per person. Testers are over capacity by Thursday ${pill("QE load: red", "bad")}</p>`;
+    </div><p class="dd-note">Active stories per person. Testers get busy by Thursday ${pill("QE load: high", "warn")}</p>`;
   };
 
   const views = {
@@ -83,7 +83,7 @@ DEMOS["delta-dashboard"] = function (el) {
       group: "Sprint Operations",
       html: () =>
         tiles([["38", "points proposed"], ["31", "team capacity"], ["34", "3-sprint average velocity"]]) +
-        `<div class="dd-callout">${pill("Over by 7 pts", "bad")} Drop or split <b>S-241 (8 pts)</b>. 8-pointers have been the least predictable size on this team, and testers are already near capacity for days 6–10.</div>`,
+        `<div class="dd-callout">${pill("7 pts over capacity", "warn")} Consider splitting <b>S-241 (8 pts)</b>. Smaller stories have been easier to plan on this team, and testers are near capacity for days 6–10.</div>`,
     },
     burndown: { name: "Burndown", group: "Sprint Operations", html: burndown },
     capacity: { name: "Capacity heatmap", group: "Sprint Operations", html: heat },
@@ -92,7 +92,7 @@ DEMOS["delta-dashboard"] = function (el) {
       group: "Sprint Operations",
       html: () =>
         `<div class="dd-two"><div><h5>From the data, what went well</h5><ul><li>Cycle time down 1.4 days vs. last sprint</li><li>No stories bypassed testing</li><li>All 5 stories over 3 pts were split before starting</li></ul></div>
-         <div><h5>What to talk about</h5><ul><li>3 carry-overs, all waiting on test</li><li>Average 2.9 days in "In Test" vs. 1.6 in development</li><li>2 stories added mid-sprint</li></ul></div></div>`,
+         <div><h5>Worth discussing</h5><ul><li>3 carry-overs, all waiting on test</li><li>Average 2.9 days in "In Test" vs. 1.6 in development</li><li>2 stories added mid-sprint</li></ul></div></div>`,
     },
     rollup: {
       name: "Feature roll-up",
@@ -102,7 +102,7 @@ DEMOS["delta-dashboard"] = function (el) {
           ["F-31 Faster portal login", "9 / 10", bar(90), pill("On track", "ok")],
           ["F-34 Offline mode", "4 / 9", bar(44, "warn"), pill("At risk", "warn")],
           ["F-36 Seat map refresh", "6 / 6", bar(100), pill("Done", "ok")],
-          ["F-40 Payment reliability", "2 / 8", bar(25, "bad"), pill("Behind", "bad")],
+          ["F-40 Payment reliability", "2 / 8", bar(25, "bad"), pill("Early", "neutral")],
         ]),
     },
     accuracy: {
@@ -182,8 +182,8 @@ DEMOS["delta-dashboard"] = function (el) {
 // ---------------------------------------------------------------
 FIGURES["delta-timeline"] = function () {
   const steps = [
-    ["Discovery", "Got a one-line brief: \"optimize workflow using AI.\" Before building anything, spent the first weeks analyzing how the teams worked, from planning through release, and pinned down six observable bottlenecks."],
-    ["First agents", "Started with the most obvious bottleneck, hand-written status updates: two agents for one team, a sprint newsletter and a sprint closeout summary."],
+    ["Discovery", "Got a one-line brief: \"optimize workflow using AI.\" Before building anything, spent the first weeks learning how the teams worked, from planning through release, and found six places where tooling could save them time."],
+    ["First agents", "Started with status updates, which took the most time to write: two agents for one team, a sprint newsletter and a sprint closeout summary."],
     ["One toolkit for five teams", "Generalized them into a shared toolkit and wrote steering files so the agents knew every team's dates, people, and rules."],
     ["Moved the mechanical work to code", "Realized five agents were just doing math. Rebuilt them as a dashboard: 2–4 seconds per report instead of 60–90, and zero AI tokens. Then added release and QA dashboards."],
     ["A new way to look at the data", "Built a daily history of every story and modeled it in a way that hadn't been done before. Found two clear ways to make planning more accurate, presented them to a 100-person meeting, and facilitated the session on putting them into practice."],
@@ -257,16 +257,16 @@ FIGURES["delta-kits"] = function () {
 };
 
 // ---------------------------------------------------------------
-// Each bottleneck I observed, and the tool built to address it
+// Each opportunity I observed, and the tool built for it
 // ---------------------------------------------------------------
 FIGURES["delta-bottlenecks"] = function () {
   const rows = [
-    ["Standup prep took a lot of clicking", "Getting ready for each standup meant going through Agility story by story to see what had changed since yesterday.", "Standup prep report: what moved, what's waiting, and tester load, in one click."],
-    ["Status updates were assembled by hand", "Newsletters, weekly decks, release notes, and quarterly reports were rebuilt each time by pulling numbers out of Agility and writing them up.", "Writing agents that draft each one from live data, with rules that keep them accurate."],
-    ["User stories were written from scratch", "Every story was typed out by hand: the description, acceptance criteria, sizing, and the link back to its feature. Careful work, but it added up, story after story.", "Story Writer, the agent I'm proudest of: describe the work in plain English, and it pulls what it needs from Agility to draft a complete story. Alongside it, a backlog health check, story splitter, and planning advisor.", true],
-    ["Release status took 30+ minutes to piece together", "Knowing where a monthly release stood meant looking up five teams' work separately and adding it up.", "Release Readiness dashboard: one scorecard across all five teams, with at-risk work flagged."],
-    ["Confirming every story was tested took digging", "Agility doesn't flag a story whose history skips the testing step, so checking meant going story by story, and test cases were written by hand.", "QA dashboard that reads each story's status history, plus an agent that drafts test cases from acceptance criteria."],
-    ["History wasn't visible in the tools", "Agility shows where work stands today, not how it moved over weeks, so there was no easy way to see trends.", "A daily data pipeline, and the analysis it made possible (below)."],
+    ["Prepping for standup", "Scrum Masters looked through Agility story by story before each standup to see what had changed since yesterday.", "Standup prep report: what moved, what's waiting, and tester load, in one click."],
+    ["Writing status updates", "Newsletters, weekly decks, release notes, and quarterly reports were each put together from the latest numbers in Agility.", "Writing agents that draft each one from live data, with rules that keep them accurate."],
+    ["Writing user stories", "Each story was written individually: the description, acceptance criteria, sizing, and the link back to its feature. Thorough work that adds up across five teams.", "Story Writer, the agent I'm proudest of: describe the work in plain English, and it pulls what it needs from Agility to draft a complete story. Alongside it, a backlog health check, story splitter, and planning advisor.", true],
+    ["Checking release status", "Seeing where a monthly release stood meant looking up five teams' work and adding it up, which took 30+ minutes.", "Release Readiness dashboard: one scorecard across all five teams, with at-risk work flagged."],
+    ["Confirming test coverage", "Agility doesn't automatically flag a story whose history skips the testing step, so confirming coverage meant checking stories individually.", "QA dashboard that reads each story's status history, plus an agent that drafts test cases from acceptance criteria."],
+    ["Seeing trends over time", "Agility is built to show where work stands today, not how it moved over past weeks.", "A daily data pipeline, and the analysis it made possible (below)."],
   ];
   return `<div class="bn">${rows
     .map(([t, saw, built, star], i) => `

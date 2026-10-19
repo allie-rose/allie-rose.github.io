@@ -22,7 +22,7 @@ DEMOS["delta-helper"] = function (el) {
     349: ["AVERAGE", "A normal price for extra legroom on a cross-country nonstop."],
     419: ["AVERAGE", "Typical for Comfort+ on a popular morning flight to LAX."],
     389: ["AVERAGE", "About what Comfort+ usually costs on this route with a connection."],
-    579: ["EXPENSIVE", "Steep for Comfort+; First Class on other flights costs about the same."],
+    579: ["EXPENSIVE", "Above the usual range for Comfort+ on this route."],
     529: ["CHEAP", "A low price for First Class on a coast-to-coast nonstop."],
     689: ["AVERAGE", "In the normal range for First Class between Atlanta and Los Angeles."],
     612: ["AVERAGE", "Typical for First Class, though the stop makes the trip longer."],
@@ -351,7 +351,7 @@ FIGURES["delta-architecture"] = function () {
       </div>
     </div>
     <div class="arch-source"><b>Digital.ai Agility</b><span>REST API + status History API</span></div>
-    <div class="arch-pipe"><b>Daily pipeline</b> snapshots Agility into SQLite → cycle time, bottlenecks, estimate accuracy</div>
+    <div class="arch-pipe"><b>Daily pipeline</b> snapshots Agility into SQLite → cycle time, trends, estimate accuracy</div>
     <div class="arch-ship">Shipped as one-click installers (Windows + Mac) with an auto-updater</div>
   </div>`;
 };
