@@ -341,7 +341,7 @@ FIGURES["delta-architecture"] = function () {
       <div class="arch-lane">
         <div class="arch-q">Needs an exact answer</div>
         <div class="arch-box arch-accent"><b>3 dashboards</b><span>Python + Flask, on their own computer</span></div>
-        <div class="arch-out">10 sprint reports · release scorecard · QA checks<br><em>2–4 seconds, zero AI tokens</em></div>
+        <div class="arch-out">9 sprint reports · release scorecard · QA checks<br><em>2–4 seconds, zero AI tokens</em></div>
       </div>
       <div class="arch-lane">
         <div class="arch-q">Needs something written</div>

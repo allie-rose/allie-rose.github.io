@@ -78,13 +78,6 @@ DEMOS["delta-dashboard"] = function (el) {
           ["Linked to a feature", "36 / 38", bar(95)],
         ]),
     },
-    planning: {
-      name: "Planning advisor",
-      group: "Sprint Operations",
-      html: () =>
-        tiles([["38", "points proposed"], ["31", "team capacity"], ["34", "3-sprint average velocity"]]) +
-        `<div class="dd-callout">${pill("7 pts over capacity", "warn")} Consider splitting <b>S-241 (8 pts)</b>. Smaller stories have been easier to plan on this team, and testers are near capacity for days 6–10.</div>`,
-    },
     burndown: { name: "Burndown", group: "Sprint Operations", html: burndown },
     capacity: { name: "Capacity heatmap", group: "Sprint Operations", html: heat },
     retro: {

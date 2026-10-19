@@ -274,7 +274,7 @@ window.PORTFOLIO = {
       dates: "May – Aug 2026",
       points: [
         "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams, found six places where better tooling could save time, and built a tool for each.",
-        "Built three Python/Flask dashboards (10 sprint reports, release readiness, QA tracking) and 15+ AI agents that write newsletters, release notes, and exec decks. Saves each Scrum Master 5–8 hours per sprint.",
+        "Built three Python/Flask dashboards (9 sprint reports, release readiness, QA tracking) and 15+ AI agents that write newsletters, release notes, and exec decks. Saves each Scrum Master 5–8 hours per sprint.",
         "Built a new view of sprint data (66 stories, development vs. testing time) and found two ways to make planning more accurate; presented to about 100 people and ran the follow-up working session, which started a review of estimation practices.",
         "Shipped it as one-click installers with an auto-updater and onboarding docs so the teams could keep using it after I left.",
       ],
