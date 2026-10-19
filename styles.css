@@ -189,7 +189,8 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
 .dm-dollar { font-weight: 700; font-size: 1.05rem; }
 .dm-badge { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; color: #fff; background: #999; vertical-align: middle; font-family: system-ui, sans-serif; }
 .dm-tip { display: none; position: absolute; z-index: 5; left: 0; top: 100%; width: 220px; background: #1b2433; color: #fff; font-size: .78rem; line-height: 1.4; padding: 8px 10px; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.2); }
-.dm-price:hover .dm-tip { display: block; }
+.dm-price:hover .dm-tip, .dm-price.open .dm-tip { display: block; }
+@media (hover: none) { .dm-price:hover .dm-tip { display: none; } .dm-price.open .dm-tip { display: block; } }
 .dm-under { margin-top: 1.25rem; }
 .dm-under h3 { margin-bottom: .5rem; font-size: 1.1rem; }
 .dm-log { display: grid; gap: .75rem; margin-bottom: 1rem; }
@@ -410,3 +411,4 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
 }
 .bn-star { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
 .block-noh { border-top: 0; padding-top: 0; }
+.dm-fl-row .dm-price:last-child .dm-tip { left: auto; right: 0; }

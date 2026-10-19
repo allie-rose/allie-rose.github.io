@@ -38,7 +38,7 @@ DEMOS["delta-helper"] = function (el) {
       </div>
       <div class="dm-fl-head">
         <div><b>ATL → LAX</b> · Fri, Nov 14 · 1 adult</div>
-        <div class="dm-hint">Hover over any price</div>
+        <div class="dm-hint">Hover or tap any price</div>
       </div>
       <div class="dm-fl-list">
         <div class="dm-fl-row dm-fl-cols"><span>Flight</span>${cabins.map((c) => `<span>${c}</span>`).join("")}</div>
@@ -80,7 +80,7 @@ DEMOS["delta-helper"] = function (el) {
   }
 
   el.querySelectorAll(".dm-price").forEach((cell) => {
-    cell.addEventListener("mouseenter", () => {
+    const rate = () => {
       const p = +cell.dataset.price;
       const [rating, reason] = answers[p];
       if (cell.dataset.analyzed) return show(p, rating, reason);
@@ -100,6 +100,14 @@ DEMOS["delta-helper"] = function (el) {
         cell.appendChild(tip);
         show(p, rating, reason);
       }, 800);
+    };
+    // Mouse: hover rates the fare. Touch screens have no hover, so a tap
+    // rates it too and pins its reason open until another price is tapped.
+    cell.addEventListener("mouseenter", rate);
+    cell.addEventListener("click", () => {
+      rate();
+      el.querySelectorAll(".dm-price.open").forEach((c) => c !== cell && c.classList.remove("open"));
+      cell.classList.toggle("open");
     });
   });
   el.querySelector(".dm-reset").onclick = () => DEMOS["delta-helper"](el);

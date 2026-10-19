@@ -116,7 +116,7 @@ window.PORTFOLIO = {
         stack: ["JavaScript", "Chrome Extensions (Manifest V3)", "Gemini 2.0 Flash API"],
         demo: "delta-helper",
         demoNote:
-          "A fake flight results page with the extension running. Hover a price. These ratings are examples I wrote; the real extension asks Gemini live.",
+          "A fake flight results page with the extension running. Hover over a price, or tap one on your phone. These ratings are examples I wrote; the real extension asks Gemini live.",
         sections: [
           {
             h: "What it could do for Delta",
