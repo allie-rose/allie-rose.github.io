@@ -3,7 +3,7 @@
 window.DEMOS = {};
 
 // ---------------------------------------------------------------
-// Delta Helper: a simulated flight results page with the extension
+// Fare Check: a simulated flight results page with the extension
 // running on it. Ratings are example answers, not live AI calls.
 // ---------------------------------------------------------------
 DEMOS["delta-helper"] = function (el) {
@@ -34,7 +34,7 @@ DEMOS["delta-helper"] = function (el) {
     <div class="dm-browser">
       <div class="dm-bar"><span></span><span></span><span></span>
         <div class="dm-url">Airline flight search results (simulated page)</div>
-        <div class="dm-ext" title="Delta Helper extension is active">✈︎ Helper on</div>
+        <div class="dm-ext" title="Fare Check extension is active">✈︎ Fare Check on</div>
       </div>
       <div class="dm-fl-head">
         <div><b>ATL → LAX</b> · Fri, Nov 14 · 1 adult</div>

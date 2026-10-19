@@ -129,8 +129,8 @@ window.PORTFOLIO = {
     },
     {
       slug: "delta-helper",
-      board: { title: "DELTA HELPER", via: "CHROME", status: "LIVE DEMO" }, // shown on the homepage departures board
-      title: "Delta Helper Chrome Extension",
+      board: { title: "FARE CHECK", via: "CHROME", status: "LIVE DEMO" }, // shown on the homepage departures board
+      title: "Fare Check (for delta.com)",
       year: "2026",
       description:
         "A feature idea for delta.com: a quick read on whether a fare is a good price for that route, right next to it. I built it as a Chrome extension to see how it would work.",
