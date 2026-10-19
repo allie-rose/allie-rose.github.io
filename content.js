@@ -22,7 +22,7 @@ window.PORTFOLIO = {
   links: {
     gitlab: "", // add your GitLab profile link once you have one
     linkedin: "https://www.linkedin.com/in/alexandrajrose/",
-    resume: "resume.pdf", // résumé copy with phone number and address removed
+    resume: "resume.pdf?v=20261019", // résumé copy with phone number and address removed
   },
 
   // ---- AI PROJECTS ------------------------------------------
