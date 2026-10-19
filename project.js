@@ -35,8 +35,8 @@
   const sections = (x.sections || [])
     .map(
       (s) => `
-      <section class="block">
-        <h2>${esc(s.h)}</h2>
+      <section class="block${s.h ? "" : " block-noh"}">
+        ${s.h ? `<h2>${esc(s.h)}</h2>` : ""}
         ${(s.p || []).map((t) => `<p>${esc(t)}</p>`).join("")}
         ${s.list ? `<ul>${s.list.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
         ${s.figure && window.FIGURES && window.FIGURES[s.figure] ? `<div class="figure">${window.FIGURES[s.figure]()}</div>` : ""}
@@ -45,6 +45,13 @@
       </section>`
     )
     .join("");
+  const demo =
+    x.demo && window.DEMOS && window.DEMOS[x.demo]
+      ? `<section class="demo-wrap">
+           <div class="demo-head"><h2>Try it</h2>${x.demoNote ? `<p class="muted">${esc(x.demoNote)}</p>` : ""}</div>
+           <div id="demo"></div>
+         </section>`
+      : "";
   const prev = all[(i - 1 + all.length) % all.length];
   const next = all[(i + 1) % all.length];
 
@@ -53,21 +60,13 @@
     <p class="eyebrow">${esc(p.kind)} · ${esc(p.year || p.venue)}</p>
     <h1>${esc(p.title)}</h1>
     <p class="lede">${esc(x.summary || p.description)}</p>
-    <div class="meta">
+    ${x.role || x.stack ? `<div class="meta">
       ${x.role ? `<span><b>Role</b> ${esc(x.role)}</span>` : ""}
       ${x.stack ? `<span><b>Built with</b> ${x.stack.map(esc).join(", ")}</span>` : ""}
-    </div>
+    </div>` : ""}
     ${p.link ? `<p class="code-link"><a class="btn" href="${esc(p.link)}" target="_blank" rel="noopener">View the code on GitHub ↗</a></p>` : ""}
     ${stats ? `<div class="stats">${stats}</div>` : ""}
-    ${
-      x.demo && window.DEMOS && window.DEMOS[x.demo]
-        ? `<section class="demo-wrap">
-             <div class="demo-head"><h2>Try it</h2>${x.demoNote ? `<p class="muted">${esc(x.demoNote)}</p>` : ""}</div>
-             <div id="demo"></div>
-           </section>`
-        : ""
-    }
-    ${sections}
+    ${x.demoAfter ? sections + demo : demo + sections}
     <nav class="pager">
       <a href="project.html?p=${esc(prev.slug)}">← ${esc(prev.title)}</a>
       <a href="project.html?p=${esc(next.slug)}">${esc(next.title)} →</a>

@@ -8,13 +8,15 @@
 //  "board" is the short text on the homepage departures board.
 //  A section can have: h (heading), p (paragraphs), list
 //  (bullets), quote (a pull quote), and code (a code excerpt).
+//  Optional on a page: role, stack, stats, and demoAfter (true =
+//  show the demo after the text instead of before it).
 // ============================================================
 
 window.PORTFOLIO = {
   name: "Allie Rose",
   tagline: "MIS student at UGA. I build things with AI, and I like figuring out how its decisions connect to business and ethics.",
   intro:
-    "I'm finishing a certificate in AI alongside my MIS degree. Last summer at Delta I built AI agents and dashboards for five software teams. On my own time I build small tools when something bugs me, and run experiments on how AI models make decisions. Every project below has a demo you can try and the details of how I made it.",
+    "I'm finishing a certificate in AI alongside my MIS degree. Last summer at Delta I built AI agents and dashboards for five software teams. On my own time I build small tools and run experiments on how AI models make decisions. Every project below has a demo you can try.",
   location: "UGA '27 · MIS + Artificial Intelligence · Athens, GA",
   email: "allie-rose1@outlook.com",
   links: {
@@ -31,97 +33,69 @@ window.PORTFOLIO = {
       title: "Internal AI Consulting at Delta",
       year: "2026",
       description:
-        "Delta gave me a one-line brief: \"optimize workflow using AI.\" I learned how five software teams worked, found six places where better tooling could save them time, and built a tool for each one, saving every Scrum Master 5–8 hours a sprint. I also modeled their sprint data in a new way and found two clear ways to make planning more accurate, which I presented to a 100-person meeting.",
+        "My brief was one line: \"optimize workflow using AI.\" I found six places where better tools could save five software teams time, built something for each, and presented a sprint planning analysis to about 100 people.",
       tags: ["AI Strategy", "AI Agents", "Python", "Dashboards"],
       link: "",
       details: {
         summary:
-          "Delta gave me a one-line brief: \"optimize workflow using AI.\" Before building anything, I spent time learning how the five software teams behind Delta's in-flight Wi-Fi worked and found six places where better tooling could save them time. Every tool I built answers one of them: three dashboards, 17 AI agents, and a data pipeline, all installable in one click. I also modeled the teams' sprint data in a new way, found two clear ways to make their planning more accurate, presented them to a 100-person meeting, and led the working session on putting them into practice.",
+          "My brief was one line: \"optimize workflow using AI.\" I spent my first weeks learning how the five software teams behind Delta's in-flight Wi-Fi worked, found six places where better tools could save them time, and built something for each. I also built a way to look at their sprint data that hadn't existed before, and presented what it showed to about 100 people.",
         role: "Data Analytics and AI Intern, Delta Air Lines (May–Aug 2026)",
-        stack: ["Python", "Flask", "Agility REST + History API", "SQLite", "Kiro AI IDE", "PowerShell / bash"],
+        stack: ["Python", "Flask", "Agility REST + History API", "SQLite", "Kiro AI IDE"],
         stats: [
           ["5–8 hrs", "saved per sprint, per Scrum Master"],
-          ["100", "people at the meeting where I presented my findings"],
+          ["100", "people at my findings presentation"],
           ["17", "AI agents"],
-          ["3", "dashboards, 10+ one-click reports"],
+          ["3", "dashboards"],
         ],
         demo: "delta-dashboard",
         demoNote:
-          "A working recreation of the dashboards I built. At Delta these were three separate apps (Sprint Operations, Release Readiness, and QA); I've combined them here so you can click through everything in one place. Every team, person, story, and number is made up.",
+          "A recreation of the three dashboards I built (Sprint Operations, Release Readiness, and QA), combined into one window. All teams, people, and numbers are made up.",
         sections: [
           {
-            h: "How the summer went",
-            figure: "delta-timeline",
-          },
-          {
-            h: "Every tool started with something I observed",
+            h: "What I noticed",
             p: [
-              "I didn't start by building. I spent my first weeks learning how the five teams worked, following work from planning through release and looking for places where better tooling could save people time. I found six, and every tool I built targets one of them.",
-              "The teams were great to work with and generous with their time, and their process was careful and thorough. My goal was to take some of the routine work off their plates so more of their time could go to building.",
+              "I followed work from planning to release and wrote down where people spent time on routine steps. The teams were great to work with, and each tool came from something I watched them do.",
             ],
             figure: "delta-bottlenecks",
           },
           {
-            h: "A new way to look at the data",
+            h: "Sprint planning analysis",
             p: [
-              "I wanted to see how well sprint plans matched what actually happened, so I modeled the teams' work in a way that hadn't been done before: a daily history of every story, comparing the time planned with the time it took, and splitting each story's time into development and testing. I ran it on 66 finished stories across three sprints.",
-              "Two patterns stood out. Smaller stories were much easier to estimate accurately, so breaking work down would make plans more reliable. And the testing stage was where stories spent the most time, so tester capacity was worth tracking right alongside developer capacity.",
-              "I presented the findings to a meeting of about 100 people, then facilitated a working session where we turned them into changes, starting from my recommendations. I built tools to support those changes, and the teams began reviewing how they estimate work.",
+              "Agility shows where work is today, not how it got there, so I built a daily history of every story. Using 66 finished stories over three sprints, I compared planned time with actual time and split each story into development and testing. Smaller stories were much easier to estimate, and testing was where stories spent the most time.",
+              "I presented this to about 100 people, then ran a working session on what to change. It started a review of how the teams estimate work.",
             ],
             figure: "delta-insight",
           },
           {
-            h: "The design",
+            h: "Dashboards and agents",
             p: [
-              "Each one also told me what kind of tool it needed. Not everything needed AI. Questions with exact answers (what's blocked, what still needs testing) are faster and more trustworthy as code that reads the data directly. Writing (newsletters, release notes, exec decks) is where AI earns its keep. So I built both, on top of the same data. Moving five agents' worth of math into a dashboard cut each report from 60–90 seconds to 2–4, with zero AI tokens.",
+              "Questions with exact answers went into dashboards that read Agility directly: 2–4 seconds per report and no AI involved. Writing went to AI agents.",
             ],
             figure: "delta-architecture",
           },
           {
-            h: "17 agents",
+            h: "Agents",
             p: [
-              "Each agent is a markdown file in Kiro, an AI coding tool, that describes one repeatable job and the rules for doing it. Teammates just ask in plain English.",
-            ],
-            figure: "delta-agents",
-          },
-          {
-            h: "The one I'm proudest of: Story Writer",
-            p: [
-              "Writing a good user story takes time: a clear description, acceptance criteria someone can test against, a size, and a link back to the feature it belongs to. Each one was written individually, which takes real time across five teams.",
-              "Story Writer turns a one-line idea into a complete story. It pulls what it needs from Agility so the story fits the team's existing work, and follows the team's own conventions from the steering files. Here's the kind of thing it produces, recreated with made-up details:",
+              "17 agents in Kiro, each a markdown file with one job and its rules, like never calling a story shipped unless it's marked Done. They all read shared steering files with the teams' sprint dates, rosters, status rules, and report formats, so nobody has to explain context in a prompt and anyone on the team can update them. A steering file looks like this (made-up details):",
             ],
             code:
-              "You: \"Let passengers retry login when the Wi-Fi portal times out.\"\n\nStory Writer:\n\nTitle: Retry login after portal timeout\nFeature: F-31 Faster portal login\nSize: 3 points\n\nAs a passenger, when the Wi-Fi login page times out,\nI want a clear way to try again,\nso that I can get online without restarting the whole flow.\n\nAcceptance criteria:\n- After a timeout, the page shows a \"Try again\" button and a short message.\n- Retrying keeps anything the passenger already entered.\n- After 3 failed retries, show how to get help.\n- Each timeout and retry is logged for monitoring.",
+              "# steering/sprint-conventions.md\n\n- Sprints are two weeks and start on Wednesdays.\n- Status flow: Backlog → In Progress → In Test → Done → Accepted.\n- Story points: 1, 2, 3, 5, 8. Anything over 3 should be split.",
           },
           {
-            h: "Rules that make them trustworthy",
+            h: "Story Writer",
             p: [
-              "An AI writing a status update for leadership can't be allowed to round \"almost done\" up to \"shipped.\" Here's the shape of one agent, recreated with made-up details:",
+              "The agent I'm proudest of. You describe a story in one sentence, and it pulls what it needs from Agility and writes the whole thing. An example with made-up details:",
             ],
             code:
-              "# Sprint newsletter agent (recreated example)\n\nGoal: a one-page update leadership can read in two minutes.\n\nSteps:\n1. Pull every story in the sprint from Agility.\n2. Group them: shipped, in testing, carried over.\n3. Write an exec summary, then a table of every story.\n\nRules:\n- Only call a story \"shipped\" if its status is Done or Accepted.\n- Never invent a number. If a metric isn't in the data, leave it out.\n- Use the team's own terms (see steering/glossary.md).",
-          },
-          {
-            h: "Steering files",
-            p: [
-              "Every agent reads shared plain-text files about how the teams work: sprint dates, rosters, how statuses flow, what reports should look like. Nobody re-explains context in a prompt, it uses fewer tokens, and anyone can edit them, so the toolkit doesn't need a developer to maintain it.",
-            ],
-            code:
-              "# steering/sprint-conventions.md (recreated example)\n\n- Sprints are two weeks and start on Wednesdays.\n- Status flow: Backlog → In Progress → In Test → Done → Accepted.\n- \"At risk\" = not In Test with 3 or fewer working days left.\n- Story points: 1, 2, 3, 5, 8. Anything over 3 should be split.\n- Reports: lead with the summary, then the table. No jargon in the summary.",
-          },
-          {
-            h: "Shipped like a product",
-            p: [
-              "A tool only matters if people keep using it after the intern leaves. Everything installs in one click on Windows or Mac from SharePoint, updates itself, runs on the user's own computer, and asks before changing anything in Agility. I wrote a \"say this, get this\" quick-start and an onboarding guide to the teams' systems.",
-            ],
-            figure: "delta-kits",
+              "You: \"Let passengers retry login when the Wi-Fi portal times out.\"\n\nTitle: Retry login after portal timeout\nFeature: F-31 Faster portal login\nSize: 3 points\n\nAs a passenger, when the Wi-Fi login page times out,\nI want a clear way to try again,\nso that I can get online without restarting the whole flow.\n\nAcceptance criteria:\n- After a timeout, the page shows a \"Try again\" button.\n- Retrying keeps anything the passenger already entered.\n- After 3 failed retries, show how to get help.",
           },
           {
             h: "Results",
             list: [
               "5–8 hours saved per sprint for each Scrum Master.",
-              "Release status went from 30+ minutes to one click; the release manager and five team leads used it.",
-              "Presented my planning analysis to a 100-person meeting and facilitated the follow-up session on putting it into practice, which started a review of how the teams estimate work.",
+              "Release status went from 30+ minutes to one click. The release manager and five team leads used it.",
+              "The planning analysis led to a review of how the teams estimate work.",
+              "Everything installs in one click on Windows or Mac and updates itself, with onboarding docs so the teams can keep using it.",
             ],
           },
         ],
@@ -133,62 +107,41 @@ window.PORTFOLIO = {
       title: "Fare Check (for delta.com)",
       year: "2026",
       description:
-        "A feature idea for delta.com: a quick read on whether a fare is a good price for that route, right next to it. I built it as a Chrome extension, and thought through how it could help Delta keep shoppers, sell upgrades, and learn how customers see its prices.",
+        "A feature idea for delta.com: hover over a fare to see whether it's a good price for that route. I built it as a Chrome extension and wrote up what it could do for Delta's pricing.",
       tags: ["Product Idea", "LLMs", "Browser Extension", "JavaScript"],
       link: "https://github.com/allie-rose/fare-check",
       details: {
         summary:
-          "I had an idea for a feature that would make booking on delta.com even easier: a quick read on whether a fare is a good price for that route, right where you're already looking. Instead of just imagining it, I built it as a Chrome extension. Hover over a price and a badge rates it cheap, average, or expensive for that route, with a one-line reason from Gemini. Then I thought about what it could do for Delta as a business, not just for shoppers.",
-        role: "Solo project",
+          "A feature idea for delta.com: hover over a fare and a badge says whether it's cheap, average, or expensive for that route, with a one-line reason from Gemini. I built it as a Chrome extension to see how it would work.",
         stack: ["JavaScript", "Chrome Extensions (Manifest V3)", "Gemini 2.0 Flash API"],
-        stats: [
-          ["~80", "lines of JavaScript"],
-          ["1 API call", "per fare, only when you hover"],
-        ],
         demo: "delta-helper",
         demoNote:
-          "A fake flight results page with the extension running on it. Hover a price. The ratings are example answers I wrote for the demo; the real extension asks Gemini live.",
+          "A fake flight results page with the extension running. Hover a price. These ratings are examples I wrote; the real extension asks Gemini live.",
         sections: [
           {
-            h: "How it could help Delta, not just shoppers",
-            p: [
-              "A fare check sounds like it only helps customers hunt for the cheapest flight. I think it could do more for Delta itself. These are ideas I'd want to explore with the people who know Delta's pricing, not claims about how it works today:",
-            ],
+            h: "What it could do for Delta",
+            p: ["Ideas I'd want to test with people who know Delta's pricing:"],
             list: [
-              "Keep shoppers on delta.com. Someone unsure whether a fare is fair often leaves to compare on other sites. A trustworthy answer right next to the price gives them a reason to book on the spot.",
-              "Help sell the upgrade. The same check can show when Comfort+ or First is good value on a route, which makes the higher cabin an easier yes.",
-              "Build trust and loyalty. Being upfront about value is the kind of thing that makes SkyMiles members feel looked after and keeps them coming back.",
-              "Create a new signal for pricing. Every time someone checks a fare, then books it or walks away, that's a data point about how customers see that price. Collected anonymously and in aggregate, it could show which routes, cabins, and dates feel high to customers, how that changes as departure gets closer, and where a promotion would actually move people.",
-              "Inform future planning. Over time, those patterns could help with decisions like when to run sales, how to position fare classes, and where demand is softening before it shows up in bookings.",
-            ],
-          },
-          {
-            h: "If Delta built it",
-            p: [
-              "My version labels fares cheap, average, or expensive, because I built it from a shopper's side. A version Delta built would frame it around value instead, something like \"great value,\" \"typical for this route,\" or \"high demand,\" and would use Delta's own fare history rather than an AI's general sense of prices. That would make the ratings accurate and the experience on-brand.",
+              "Shoppers who aren't sure a fare is fair often leave to compare on other sites. An answer next to the price gives them a reason to book on delta.com.",
+              "The same check could show when Comfort+ or First is good value on a route, which helps sell the upgrade.",
+              "Each check, and whether the person then books, says something about how customers see that price. Collected anonymously, that could show which routes, cabins, and dates feel high, and help decide when to run sales.",
+              "If Delta built it, I'd use Delta's own fare history instead of an AI's general sense of prices, and labels like \"great value\" or \"high demand\" instead of \"expensive.\"",
             ],
           },
           {
             h: "How it works",
-            list: [
-              "Delta loads fares after the page opens, so a MutationObserver watches for new price elements and attaches a hover listener to each one.",
-              "On first hover it reads the price, origin, and destination off the page and sends them to Gemini.",
-              "Gemini has to answer in JSON with one of three ratings. The code strips any markdown fences, parses it, and colors the badge green, orange, or red. The reason goes in the tooltip.",
-              "Each price is only checked once. If the call fails, the badge shows a gray \"?\" instead of breaking the page.",
+            p: [
+              "Fares load after the page opens, so a MutationObserver watches for prices and adds a hover listener to each. On first hover, it reads the price and route off the page and sends Gemini this prompt. Asking for fixed JSON makes the answer easy to turn into a colored badge.",
             ],
-          },
-          {
-            h: "The prompt",
-            p: ["This is the whole prompt. Forcing a fixed JSON shape is what makes the answer easy for code to use."],
             code:
               "A flight from ${origin} to ${destination} costs ${priceText}.\nIs this cheap, average, or expensive for this specific route?\nReply ONLY with this JSON:\n{\"rating\":\"CHEAP\",\"reason\":\"one sentence for this specific route\"}\nRating must be CHEAP, AVERAGE, or EXPENSIVE.",
           },
           {
-            h: "What's not done yet",
+            h: "Not done yet",
             list: [
-              "The \"Analyze This Flight\" button in the popup still says \"Coming soon.\"",
-              "The API key sits in a local config file on my computer. To share the extension, I'd move the Gemini call to a small server.",
-              "Ratings come from Gemini's general sense of prices, not real fare history. Plugging in historical fares would make them trustworthy.",
+              "The popup's \"Analyze This Flight\" button still says \"Coming soon.\"",
+              "The API key lives in a local config file. To share the extension, the Gemini call should move to a small server.",
+              "Ratings come from Gemini, not real fare history.",
             ],
           },
         ],
@@ -200,35 +153,31 @@ window.PORTFOLIO = {
       title: "Coffee Order Assistant (built on Jev)",
       year: "2026",
       description:
-        "Type a coffee order the way you'd say it and get the exact drink and price. I built it on Jev, a model that returns probabilities instead of text, so I could see how sure it was about every detail. 19 of 20 test orders right.",
+        "Type a coffee order the way you'd say it and get the exact drink and price. It runs on Jev, a model that answers with probabilities instead of text, so it knows when to ask instead of guess. 19 of 20 test orders right.",
       tags: ["LLMs", "Python", "New AI tech"],
       link: "https://github.com/allie-rose/coffee-order-assistant",
       details: {
         summary:
-          "\"Venti caramel mocha with whip\" isn't how a menu is written. I built an assistant that turns orders like that into an exact drink and price, and asks a question when it isn't sure. It runs on Jev, a newer kind of model from TypeSafe that answers with probabilities instead of writing text.",
-        role: "Solo project",
+          "An assistant that turns orders like \"venti caramel mocha with whip\" into an exact menu drink and price, and asks a question when it isn't sure. It runs on Jev, a model from TypeSafe that answers with probabilities instead of writing text.",
         stack: ["Python", "TypeSafe SDK", "Jev (jev-1.13)", "pytest"],
         stats: [
           ["19 / 20", "test orders right"],
-          ["13", "questions in 1 request"],
           ["0", "wrong orders placed without a check"],
         ],
         demo: "coffee",
         demoNote:
-          "Real results from my test run. Pick a message, then look under the reply at the raw numbers Jev sent back.",
+          "Real results from my test run. Pick a message, then look under the reply at the numbers Jev sent back.",
         sections: [
           {
-            h: "Why Jev and not a chatbot",
+            h: "Why Jev",
             p: [
-              "If you hand a chatbot the menu and ask it to take orders, it mostly works. But it can make up a drink or a price, and it sounds just as confident when it's guessing. You can't tell from the text how sure it was.",
-              "Jev doesn't write text. You give it a question and a list of allowed answers, and it returns how likely each one is. There are three question types: a Choice (pick one from a list), a Noul (yes or no, with the chance of yes), and a Score (a spot on a scale). I used Choices and Nouls.",
-              "So Jev never sees a price and never talks to the customer. It answers questions about the message. My Python code applies the menu rules, does the math, and writes the reply.",
+              "A chatbot given the menu mostly works, but it can invent a drink or a price and sounds equally sure when it's guessing. Jev doesn't write anything. You give it a question and the allowed answers, and it returns how likely each one is. It never sees a price or talks to the customer; my Python code applies the menu rules and writes the reply.",
             ],
           },
           {
             h: "The questions",
             p: [
-              "Every order gets the same 13 questions in one request: what they're trying to do, which drink, size, temperature, milk, sweetener, a \"did they even mention it?\" for each of those four, and a yes/no for extra shot, whipped cream, and decaf. Here's what two of them look like in my code:",
+              "Each order gets 13 questions in one request: intent, drink, size, temperature, milk, sweetener, whether each of those four was mentioned at all, and yes/no for extra shot, whipped cream, and decaf. Two of them:",
             ],
             code:
               "SIZE = Choice(\n    instructions=\"What cup size does the customer want?\",\n    criteria={\n        \"small\": \"small, short, tall, 8 or 12 ounces\",\n        \"medium\": \"medium, regular, grande, 16 ounces\",\n        \"large\": \"large, big, venti, 20 ounces or more\",\n    },\n)\nSIZE_STATED = Noul(\n    instructions=\"Does `customer_message` say anything about the cup size?\"\n)",
@@ -236,25 +185,15 @@ window.PORTFOLIO = {
           {
             h: "Using the probabilities",
             p: [
-              "An order's confidence is its least certain field, because one wrong detail ruins the drink. Under 80%, the assistant reads the order back before placing it. If two drinks are close, it asks which one.",
-              "\"Something warm and chocolatey for my kid\" is a good example. Jev was 100% on hot chocolate but only 68% that the message was an order at all, so it gets read back. Jev also leaned \"small\" (88%), but only gave 1% odds that the customer mentioned a size, so the code ignored that guess and used the default medium.",
+              "An order is only as confident as its least certain detail. Under 80%, the assistant reads the order back. For \"something warm and chocolatey for my kid,\" Jev was 100% on hot chocolate but 68% that it was an order at all, so it confirms first. It also leaned \"small\" (88%) but gave 1% odds that a size was mentioned, so the code used the default medium.",
             ],
           },
           {
-            h: "Testing it",
+            h: "Testing",
             list: [
-              "20 test orders with known right answers, including Starbucks sizes, contradictions (\"hot cold brew\"), off-menu drinks, and things that aren't orders at all.",
-              "19 of 20 right. The miss was \"small black coffee please\": Jev split 61% drip coffee and 32% americano, so the assistant asked instead of guessing. Not what the test expected, but it didn't place a wrong order.",
-              "I cached Jev's answers, so I could try confidence cutoffs from 50% to 90% without paying for new calls. None of them let a wrong order through.",
-              "The non-AI code has its own pytest suite that runs with no API calls.",
-            ],
-          },
-          {
-            h: "Next",
-            list: [
-              "More than one drink per message (\"a latte and two cappuccinos\").",
-              "Edits to an order already in progress (\"actually make it oat\").",
-              "An allergy check that sends nut-milk orders to a barista.",
+              "20 test orders with known answers, including Starbucks sizes, \"hot cold brew,\" off-menu drinks, and messages that aren't orders.",
+              "The one miss was \"small black coffee please\": Jev split 61% drip and 32% americano, so it asked. Not what the test expected, but no wrong order.",
+              "I cached Jev's answers and tried cutoffs from 50% to 90% for free. None let a wrong order through.",
             ],
           },
         ],
@@ -273,36 +212,29 @@ window.PORTFOLIO = {
         "After a viral story about AI models cheating at running a vending machine, I ran my own version with Gemini three ways. Spelling out the legal rules dropped 30-day profit from $2,970 to $860.",
       details: {
         summary:
-          "I read about the viral vending machine test, where AI models told to maximize profit started denying refunds and coordinating prices with competitors. Researchers pointed to the fact that the models knew it was a simulation. I wanted to see for myself how much the framing and the rules in a prompt change what an AI decides to do.",
-        role: "Designed and ran it, wrote it up",
-        stack: ["Google Gemini"],
-        stats: [
-          ["3", "prompts, same goal"],
-          ["$2,970", "profit, ethics suggested"],
-          ["$860", "profit, ethics spelled out"],
-        ],
+          "I read about the viral vending machine test, where AI models told to maximize profit rejected refunds, manipulated pricing, and coordinated with competitors. Researchers said part of the reason was that the AI knew it was in a simulation. I found this super interesting and wanted to learn more, so I ran my own version with Gemini to see how much framing and prompt rules actually influence AI decision-making.",
         demo: "vending",
+        demoAfter: true,
         demoNote: "Switch between the three runs.",
         sections: [
           {
-            h: "Setup",
+            h: "Three prompts, one goal",
             p: [
-              "All three prompts had the same goal: maximize profit over 30 days running a vending machine in a busy university student center. Gemini controlled products, pricing, restocking, refunds, competition, and demand shifts. I only changed whether it was told this was a simulation, and how ethics were described.",
+              "Every prompt asked Gemini to maximize profit over 30 days running a vending machine in a busy university student center, with full control over products, pricing, inventory, refunds, and competition. What changed was the setting: a pure simulation, the real world with ethics left up to Gemini, and the real world with explicit legal and ethical rules.",
+              "The simulation run was the wildest. Near the end it stopped ordering inventory, sold everything at premium prices, denied refunds based on customer \"lifetime value,\" and undercut a competitor below cost before raising prices. Gemini called this \"calculated coldness.\"",
             ],
           },
           {
-            h: "What stood out",
+            h: "The comparison that mattered",
             p: [
-              "Run 1 was the wildest. Once the end date got close, it stopped restocking, sold off everything at premium prices, denied refunds based on customer \"lifetime value,\" and priced a competitor out before raising prices again. Gemini called its own approach \"calculated coldness.\"",
-              "But the comparison that mattered most was Runs 2 and 3. Same campus, same real students, same goal. The only difference was that Run 3 listed the actual rules: consumer protection and antitrust laws, no lying, transparent refunds, audits, and removal for bad behavior.",
+              "The two real-world runs were identical except that the third spelled out the rules: consumer protection and antitrust laws, no lying, transparent refunds, audits, and removal for bad behavior. Profit went from $2,970.45 to $860.10.",
             ],
             quote:
               "When ethics are suggested, they're negotiable. When ethics are hard-coded as enforceable rules, they're not.",
           },
           {
-            h: "Where I landed",
             p: [
-              "The rules made it safer and cut profit by more than two-thirds. So if a company needs to hit quarterly numbers, which system do they pick? I started this wanting to see how an AI prices snacks and ended up thinking a lot more about incentives, leadership, and AI governance.",
+              "I started out just wanting to see how AI would price snacks and manage inventory, and ended up thinking way more about incentives, leadership, and AI governance.",
             ],
           },
         ],
@@ -317,34 +249,16 @@ window.PORTFOLIO = {
         "Same email, four ways of asking for it. Cutting the filler used 40% fewer tokens and the email was just as good. Typos and shorthand saved less, and shorthand made it worse.",
       details: {
         summary:
-          "I asked the same model to write the same email four ways: chatty, stripped down, full of typos, and in texting shorthand. Then I counted tokens and graded the results.",
-        role: "Designed and ran it",
-        stack: ["LLM API"],
-        stats: [
-          ["283 → 169", "tokens, verbose vs. compressed"],
-          ["5 / 5", "quality either way"],
-        ],
+          "I asked the same model to write the same email, declining a vendor's price increase, four ways: chatty, stripped down, full of typos, and in texting shorthand. Then I counted tokens and graded the emails.",
         demo: "compression",
         demoNote: "Pick a prompt to see what it cost.",
         sections: [
           {
-            h: "Setup",
-            p: [
-              "The task was declining a vendor's price increase without damaging the relationship. Same model, same task. Only the wording of the request changed.",
-            ],
-          },
-          {
-            h: "Results",
+            h: "What I found",
             list: [
-              "Compressed used 40% fewer tokens than verbose and scored the same on quality.",
-              "The model understood every typo and abbreviation without asking, but messy prompts saved less than clean short ones, and shorthand dropped quality from 5 to 4.",
-              "Most of the savings were on the input side. The emails came out about the same length no matter how I asked.",
-            ],
-          },
-          {
-            h: "Why I care",
-            p: [
-              "One prompt saves a fraction of a cent. An agent that chains ten calls together pays that difference ten times, on every run.",
+              "The compressed prompt used 40% fewer tokens than the chatty one, with the same quality.",
+              "The model understood every typo and abbreviation, but shorthand dropped quality from 5 to 4.",
+              "Almost all of the savings came from the input. The emails were about the same length either way.",
             ],
           },
         ],
@@ -359,10 +273,10 @@ window.PORTFOLIO = {
       org: "Delta Air Lines · Internal AI consulting",
       dates: "May – Aug 2026",
       points: [
-        "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams; analyzed how work actually flowed from planning to release and found six places where better tooling could save time, then built a tool for each one.",
+        "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams, found six places where better tooling could save time, and built a tool for each.",
         "Built three Python/Flask dashboards (10 sprint reports, release readiness, QA tracking) and 15+ AI agents that write newsletters, release notes, and exec decks. Saves each Scrum Master 5–8 hours per sprint.",
-        "Modeled sprint data in a new way (66 stories, development vs. testing time) and found two clear ways to make planning more accurate; presented them to a 100-person meeting and facilitated the session on putting them into practice, which started a review of estimation practices.",
-        "Shipped it as one-click installers with an auto-updater and onboarding docs, so the teams kept using it after I left.",
+        "Built a new view of sprint data (66 stories, development vs. testing time) and found two ways to make planning more accurate; presented to about 100 people and ran the follow-up working session, which started a review of estimation practices.",
+        "Shipped it as one-click installers with an auto-updater and onboarding docs so the teams could keep using it after I left.",
       ],
     },
     {

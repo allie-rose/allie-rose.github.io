@@ -177,56 +177,7 @@ DEMOS["delta-dashboard"] = function (el) {
   pick("standup");
 };
 
-// ---------------------------------------------------------------
-// How the summer went
-// ---------------------------------------------------------------
-FIGURES["delta-timeline"] = function () {
-  const steps = [
-    ["Discovery", "Got a one-line brief: \"optimize workflow using AI.\" Before building anything, spent the first weeks learning how the teams worked, from planning through release, and found six places where tooling could save them time."],
-    ["First agents", "Started with status updates, which took the most time to write: two agents for one team, a sprint newsletter and a sprint closeout summary."],
-    ["One toolkit for five teams", "Generalized them into a shared toolkit and wrote steering files so the agents knew every team's dates, people, and rules."],
-    ["Moved the mechanical work to code", "Realized five agents were just doing math. Rebuilt them as a dashboard: 2–4 seconds per report instead of 60–90, and zero AI tokens. Then added release and QA dashboards."],
-    ["A new way to look at the data", "Built a daily history of every story and modeled it in a way that hadn't been done before. Found two clear ways to make planning more accurate, presented them to a 100-person meeting, and facilitated the session on putting them into practice."],
-    ["Shipped it", "Packaged everything as one-click installers with an auto-updater and onboarding docs, then presented the whole thing to leadership."],
-  ];
-  return `<ol class="tl">${steps.map(([h, p], i) => `<li><span class="tl-n">${String(i + 1).padStart(2, "0")}</span><div><b>${h}</b><p>${p}</p></div></li>`).join("")}</ol>`;
-};
 
-// ---------------------------------------------------------------
-// The agent library
-// ---------------------------------------------------------------
-FIGURES["delta-agents"] = function () {
-  const groups = [
-    ["Every day", [["Standup prep", "What moved, what's waiting, who might need a hand"]]],
-    ["Every sprint", [
-      ["Sprint planning advisor", "Checks the plan against capacity and past velocity"],
-      ["Backlog health check", "Flags stories that aren't ready to start"],
-      ["Sprint closeout", "Done, carried over, dropped, and why"],
-      ["Sprint newsletter", "A one-page update leadership can read in two minutes"],
-    ]],
-    ["Planning", [
-      ["★ Story writer", "Turns a plain-English idea into a complete story, using context from Agility"],
-      ["Feature breakdown", "Splits a feature into right-sized stories"],
-      ["Increment planner", "Drafts the quarterly plan and release schedule"],
-    ]],
-    ["Leadership updates", [
-      ["Weekly summary", "What happened this week across all five teams"],
-      ["Weekly status deck", "Builds the weekly PowerPoint from live data"],
-      ["Monthly release report", "Where the monthly release stands"],
-      ["Increment report", "The quarterly executive summary, as a doc and a deck"],
-    ]],
-    ["Quality", [["Test case generator", "Writes structured test cases from a story's acceptance criteria"]]],
-    ["Keeping it running", [
-      ["Setup wizard", "Walks a new user through first-time setup"],
-      ["Prompt coach", "Helps teammates write better requests"],
-      ["Agent updater", "Pulls the latest version of every agent"],
-      ["Publish agents", "Pushes new versions out to everyone"],
-    ]],
-  ];
-  return `<div class="ag">${groups
-    .map(([g, list]) => `<div class="ag-g"><h5>${g}</h5>${list.map(([n, d]) => `<div class="ag-c"><b>${n}</b><span>${d}</span></div>`).join("")}</div>`)
-    .join("")}</div>`;
-};
 
 // ---------------------------------------------------------------
 // Finding → recommendation → what I built
@@ -242,19 +193,6 @@ FIGURES["delta-insight"] = function () {
     .join("")}</div>`;
 };
 
-// ---------------------------------------------------------------
-// The three install kits
-// ---------------------------------------------------------------
-FIGURES["delta-kits"] = function () {
-  const kits = [
-    ["Scrum Master starter kit", "For a new Scrum Master on day one", ["11 agents", "6 steering files", "All 3 dashboards", "Setup checklist"]],
-    ["Full toolkit", "Everything, for the power users", ["17 agents", "13 steering files", "~20 helper scripts", "Auto-updater for Windows + Mac"]],
-    ["Weekly status deck kit", "Just the weekly PowerPoint, for people who only need that", ["1 agent", "Data + build scripts", "4 steering files"]],
-  ];
-  return `<div class="kits">${kits
-    .map(([n, who, items], i) => `<div class="kit${i === 1 ? " kit-main" : ""}"><b>${n}</b><span>${who}</span><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div>`)
-    .join("")}</div>`;
-};
 
 // ---------------------------------------------------------------
 // Each opportunity I observed, and the tool built for it
