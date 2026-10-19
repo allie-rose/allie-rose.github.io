@@ -133,12 +133,12 @@ window.PORTFOLIO = {
       title: "Fare Check (for delta.com)",
       year: "2026",
       description:
-        "A feature idea for delta.com: a quick read on whether a fare is a good price for that route, right next to it. I built it as a Chrome extension to see how it would work.",
+        "A feature idea for delta.com: a quick read on whether a fare is a good price for that route, right next to it. I built it as a Chrome extension, and thought through how it could help Delta keep shoppers, sell upgrades, and learn how customers see its prices.",
       tags: ["Product Idea", "LLMs", "Browser Extension", "JavaScript"],
       link: "https://github.com/allie-rose/delta-helper",
       details: {
         summary:
-          "I had an idea for a feature that would make booking on delta.com even easier: a quick read on whether a fare is a good price for that route, right where you're already looking. Instead of just imagining it, I built it as a Chrome extension. Hover over a price and a badge rates it cheap, average, or expensive for that route, with a one-line reason from Gemini.",
+          "I had an idea for a feature that would make booking on delta.com even easier: a quick read on whether a fare is a good price for that route, right where you're already looking. Instead of just imagining it, I built it as a Chrome extension. Hover over a price and a badge rates it cheap, average, or expensive for that route, with a one-line reason from Gemini. Then I thought about what it could do for Delta as a business, not just for shoppers.",
         role: "Solo project",
         stack: ["JavaScript", "Chrome Extensions (Manifest V3)", "Gemini 2.0 Flash API"],
         stats: [
@@ -149,6 +149,25 @@ window.PORTFOLIO = {
         demoNote:
           "A fake flight results page with the extension running on it. Hover a price. The ratings are example answers I wrote for the demo; the real extension asks Gemini live.",
         sections: [
+          {
+            h: "How it could help Delta, not just shoppers",
+            p: [
+              "A fare check sounds like it only helps customers hunt for the cheapest flight. I think it could do more for Delta itself. These are ideas I'd want to explore with the people who know Delta's pricing, not claims about how it works today:",
+            ],
+            list: [
+              "Keep shoppers on delta.com. Someone unsure whether a fare is fair often leaves to compare on other sites. A trustworthy answer right next to the price gives them a reason to book on the spot.",
+              "Help sell the upgrade. The same check can show when Comfort+ or First is good value on a route, which makes the higher cabin an easier yes.",
+              "Build trust and loyalty. Being upfront about value is the kind of thing that makes SkyMiles members feel looked after and keeps them coming back.",
+              "Create a new signal for pricing. Every time someone checks a fare, then books it or walks away, that's a data point about how customers see that price. Collected anonymously and in aggregate, it could show which routes, cabins, and dates feel high to customers, how that changes as departure gets closer, and where a promotion would actually move people.",
+              "Inform future planning. Over time, those patterns could help with decisions like when to run sales, how to position fare classes, and where demand is softening before it shows up in bookings.",
+            ],
+          },
+          {
+            h: "If Delta built it",
+            p: [
+              "My version labels fares cheap, average, or expensive, because I built it from a shopper's side. A version Delta built would frame it around value instead, something like \"great value,\" \"typical for this route,\" or \"high demand,\" and would use Delta's own fare history rather than an AI's general sense of prices. That would make the ratings accurate and the experience on-brand.",
+            ],
+          },
           {
             h: "How it works",
             list: [
