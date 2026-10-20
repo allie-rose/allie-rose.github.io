@@ -15,6 +15,11 @@
   $("footer").textContent = `© ${new Date().getFullYear()} ${d.name}`;
   $("email-btn").href = $("email-text").href = $("footer-email").href = `mailto:${d.email}`;
   $("email-text").textContent = $("footer-email").textContent = d.email;
+  if (d.phone) {
+    const digits = d.phone.replace(/[^0-9]/g, "");
+    $("phone-text").href = `tel:${digits.length === 10 ? "+1" + digits : digits}`;
+    $("phone-text").textContent = d.phone;
+  }
   $("linkedin-btn").href = $("footer-li").href = d.links.linkedin;
 
   const links = [

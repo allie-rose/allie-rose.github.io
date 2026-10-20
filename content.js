@@ -19,10 +19,11 @@ window.PORTFOLIO = {
     "I'm an Agentic AI Research Fellow at UGA, finishing a certificate in AI alongside my MIS degree. Last summer at Delta I built AI agents and dashboards for five software teams. On my own time I build small tools and run experiments on how AI models make decisions. Every project below has a demo you can try.",
   location: "UGA '27 · MIS + Artificial Intelligence · Athens, GA",
   email: "allie-rose1@outlook.com",
+  phone: "(703) 785-2645",
   links: {
     gitlab: "", // add your GitLab profile link once you have one
     linkedin: "https://www.linkedin.com/in/alexandrajrose/",
-    resume: "resume.pdf?v=20261020", // resume copy with phone number and address removed
+    resume: "resume.pdf?v=20261020b",
   },
 
   // ---- AI PROJECTS ------------------------------------------

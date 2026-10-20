@@ -412,3 +412,6 @@ h1, h2, h3 { margin: 0; line-height: 1.05; font-family: var(--display); }
 .bn-star { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
 .block-noh { border-top: 0; padding-top: 0; }
 .dm-fl-row .dm-price:last-child .dm-tip { left: auto; right: 0; }
+.phone-line { margin: 1rem 0 0; font: 600 1.1rem var(--mono); letter-spacing: .02em; }
+.phone-line a { color: var(--text); }
+.phone-line a:hover { color: var(--accent-text); }
