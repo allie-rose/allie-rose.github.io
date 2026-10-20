@@ -21,7 +21,7 @@
     ["Email", `mailto:${d.email}`],
     ["LinkedIn ↗", d.links.linkedin],
     ["GitLab ↗", d.links.gitlab],
-    ["Résumé ↗", d.links.resume],
+    ["Resume ↗", d.links.resume],
   ].filter(([, url]) => url);
   $("hero-links").innerHTML = links
     .map(([label, url]) => `<a class="btn ghost" href="${esc(url)}"${url.startsWith("mailto:") ? "" : ' target="_blank" rel="noopener"'}>${label}</a>`)

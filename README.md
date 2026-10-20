@@ -6,7 +6,7 @@ A simple portfolio site showing AI projects, research, and work experience. It's
 
 Edit **`content.js`**. It's the only file you need to touch. Change the text inside the quotes, and copy a `{ ... },` block to add another project, paper, or job. Each project's `details` section fills in its own page (`project.html?p=<slug>`).
 
-To add a résumé, put `resume.pdf` in this folder and set `resume: "resume.pdf"` in `content.js`.
+To add a resume, put `resume.pdf` in this folder and set `resume: "resume.pdf"` in `content.js`.
 
 ## Where it lives
 

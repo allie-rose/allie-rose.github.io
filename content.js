@@ -16,13 +16,13 @@ window.PORTFOLIO = {
   name: "Allie Rose",
   tagline: "MIS student at UGA. I build things with AI, and I like figuring out how its decisions connect to business and ethics.",
   intro:
-    "I'm finishing a certificate in AI alongside my MIS degree. Last summer at Delta I built AI agents and dashboards for five software teams. On my own time I build small tools and run experiments on how AI models make decisions. Every project below has a demo you can try.",
+    "I'm an Agentic AI Research Fellow at UGA, finishing a certificate in AI alongside my MIS degree. Last summer at Delta I built AI agents and dashboards for five software teams. On my own time I build small tools and run experiments on how AI models make decisions. Every project below has a demo you can try.",
   location: "UGA '27 · MIS + Artificial Intelligence · Athens, GA",
   email: "allie-rose1@outlook.com",
   links: {
     gitlab: "", // add your GitLab profile link once you have one
     linkedin: "https://www.linkedin.com/in/alexandrajrose/",
-    resume: "resume.pdf?v=20261019", // résumé copy with phone number and address removed
+    resume: "resume.pdf?v=20261020", // resume copy with phone number and address removed
   },
 
   // ---- AI PROJECTS ------------------------------------------
@@ -269,6 +269,16 @@ window.PORTFOLIO = {
   // ---- WORK EXPERIENCE (newest first) ------------------------
   experience: [
     {
+      role: "Agentic AI Research Fellow",
+      org: "Center for Undergraduate Research Opportunities (CURO), UGA",
+      dates: "Aug 2026 – Present",
+      points: [
+        "Invited by UGA MIS Department Head Dr. Gerald Kane as one of 4 students to lead CURO research on agentic AI and enterprise adoption.",
+        "Build multi-agent workflows, tool-use APIs, and autonomous systems with Claude and other AI frameworks.",
+        "Track weekly AI developments to inform research on how enterprises adopt agentic systems.",
+      ],
+    },
+    {
       role: "Data Analytics and AI Intern",
       org: "Delta Air Lines · Internal AI consulting",
       dates: "May – Aug 2026",
@@ -301,5 +311,5 @@ window.PORTFOLIO = {
   ],
 
   // ---- SKILLS / TOOLS ----------------------------------------
-  skills: ["Agentic AI", "Prompt Engineering", "Python", "Flask", "REST APIs", "Power BI", "AWS CloudWatch", "Java", "Excel"],
+  skills: ["Agentic AI", "AWS Kiro", "Python", "Java", "Flask", "Prompt Engineering", "REST APIs", "Power BI", "Excel", "SharePoint"],
 };
