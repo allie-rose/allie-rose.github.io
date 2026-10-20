@@ -38,7 +38,7 @@ window.PORTFOLIO = {
       link: "",
       details: {
         summary:
-          "My brief was one line: \"optimize workflow using AI.\" I spent my first weeks learning how the five software teams behind Delta's in-flight Wi-Fi worked, found six places where better tools could save them time, and built something for each. I also built a way to look at their sprint data that hadn't existed before, and presented what it showed to about 100 people.",
+          "My brief was one line: \"optimize workflow using AI.\" I spent my first weeks learning how five software development teams at Delta worked, found six places where better tools could save them time, and built something for each. I also built a way to look at their sprint data that hadn't existed before, and presented what it showed to about 100 people.",
         role: "Data Analytics and AI Intern, Delta Air Lines (May–Aug 2026)",
         stack: ["Python", "Flask", "Agility REST + History API", "SQLite", "Kiro AI IDE"],
         stats: [
@@ -87,7 +87,7 @@ window.PORTFOLIO = {
               "The agent I'm proudest of. You describe a story in one sentence, and it pulls what it needs from Agility and writes the whole thing. An example with made-up details:",
             ],
             code:
-              "You: \"Let passengers retry login when the Wi-Fi portal times out.\"\n\nTitle: Retry login after portal timeout\nFeature: F-31 Faster portal login\nSize: 3 points\n\nAs a passenger, when the Wi-Fi login page times out,\nI want a clear way to try again,\nso that I can get online without restarting the whole flow.\n\nAcceptance criteria:\n- After a timeout, the page shows a \"Try again\" button.\n- Retrying keeps anything the passenger already entered.\n- After 3 failed retries, show how to get help.",
+              "You: \"Let users retry login when their session times out.\"\n\nTitle: Retry login after session timeout\nFeature: F-31 Faster login\nSize: 3 points\n\nAs a customer, when my login times out,\nI want a clear way to try again,\nso that I don't have to start over.\n\nAcceptance criteria:\n- After a timeout, the page shows a \"Try again\" button.\n- Retrying keeps anything the customer already entered.\n- After 3 failed retries, show how to get help.",
           },
           {
             h: "Results",
@@ -273,7 +273,7 @@ window.PORTFOLIO = {
       org: "Delta Air Lines · Internal AI consulting",
       dates: "May – Aug 2026",
       points: [
-        "Took an open-ended brief (\"optimize workflow using AI\") for 5 in-flight Wi-Fi software teams, found six places where better tooling could save time, and built a tool for each.",
+        "Took an open-ended brief (\"optimize workflow using AI\") for 5 software development teams, found six places where better tooling could save time, and built a tool for each.",
         "Built three Python/Flask dashboards (9 sprint reports, release readiness, QA tracking) and 15+ AI agents that write newsletters, release notes, and exec decks. Saves each Scrum Master 5–8 hours per sprint.",
         "Built a new view of sprint data (66 stories, development vs. testing time) and found two ways to make planning more accurate; presented to about 100 people and ran the follow-up working session, which started a review of estimation practices.",
         "Shipped it as one-click installers with an auto-updater and onboarding docs so the teams could keep using it after I left.",

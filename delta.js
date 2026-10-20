@@ -62,7 +62,7 @@ DEMOS["delta-dashboard"] = function (el) {
         tiles([["34 / 40", "points delivered vs. committed"], ["85%", "commitment met", "ok"], ["3", "carried over", "warn"], ["1", "dropped"]]) +
         T(["Bucket", "Stories"], [
           [pill("Done", "ok"), "S-201 Seat map refresh · S-205 Login retry · S-212 Fare cache · +8 more"],
-          [pill("Carry over", "warn"), "S-207 Offline mode · S-224 Payment timeout · S-230 Captive portal copy"],
+          [pill("Carry over", "warn"), "S-207 Offline mode · S-224 Payment timeout · S-230 Help page copy"],
           [pill("Dropped", "neutral"), "S-236 Legacy banner cleanup"],
         ]),
     },
@@ -92,7 +92,7 @@ DEMOS["delta-dashboard"] = function (el) {
       group: "Sprint Operations",
       html: () =>
         T(["Feature", "Progress", "", "Status"], [
-          ["F-31 Faster portal login", "9 / 10", bar(90), pill("On track", "ok")],
+          ["F-31 Faster login", "9 / 10", bar(90), pill("On track", "ok")],
           ["F-34 Offline mode", "4 / 9", bar(44, "warn"), pill("At risk", "warn")],
           ["F-36 Seat map refresh", "6 / 6", bar(100), pill("Done", "ok")],
           ["F-40 Payment reliability", "2 / 8", bar(25, "bad"), pill("Early", "neutral")],
@@ -114,9 +114,9 @@ DEMOS["delta-dashboard"] = function (el) {
       name: "Story splitter",
       group: "Sprint Operations",
       html: () =>
-        `<div class="dd-split"><div class="dd-big"><span class="dd-k">8 pts</span><b>S-241 Offline mode for the captive portal</b><small>Too big to estimate reliably</small></div>
+        `<div class="dd-split"><div class="dd-big"><span class="dd-k">8 pts</span><b>S-241 Offline mode for the mobile app</b><small>Too big to estimate reliably</small></div>
          <div class="dd-arrow">→</div>
-         <div class="dd-smalls">${[["3", "Cache portal page for offline load"], ["2", "Show offline banner with retry"], ["3", "Queue login attempts and replay when online"]]
+         <div class="dd-smalls">${[["3", "Cache key screens for offline use"], ["2", "Show an offline banner with retry"], ["3", "Queue actions and sync when back online"]]
            .map(([p, t]) => `<div><span class="dd-k">${p} pts</span>${t}</div>`).join("")}</div></div>
          <p class="dd-note">Each new story gets its own acceptance criteria, ready to create in Agility with one click.</p>`,
     },
@@ -139,7 +139,7 @@ DEMOS["delta-dashboard"] = function (el) {
       html: () =>
         `<div class="dd-callout">${pill("3 stories to double-check", "warn")} Their status history goes from In Progress to Done with no In Test step, so the dashboard flags them for a quick look.</div>` +
         T(["Story", "Team", "Path", "Next step"], [
-          ["S-198 Captive portal copy", "Harbor", "In Progress → Done", "4 test cases drafted"],
+          ["S-198 Help page copy", "Harbor", "In Progress → Done", "4 test cases drafted"],
           ["S-203 Login timeout", "Cedar", "In Progress → Done", "2 test cases drafted"],
           ["S-209 Fare cache TTL", "Harbor", "In Progress → Accepted", "3 test cases drafted"],
         ]) +
@@ -179,7 +179,7 @@ FIGURES["delta-insight"] = function () {
   const rows = [
     ["Smaller stories were much easier to estimate accurately", "Split stories to 3 points or less", "Story splitter + estimate-accuracy report"],
     ["The testing stage was where stories spent the most time", "Track tester load every day", "QE load ratio in standup prep + capacity heatmap"],
-    ["Passenger-facing changes carry the most risk at release", "Put them behind feature flags", "Recommendation I brought to the working session"],
+    ["Customer-facing changes carry the most risk at release", "Put them behind feature flags", "Recommendation I brought to the working session"],
   ];
   return `<div class="ins"><div class="ins-h"><span>What the data showed</span><span>What I recommended</span><span>What I built</span></div>${rows
     .map((r) => `<div class="ins-r">${r.map((c) => `<div>${c}</div>`).join("")}</div>`)
