@@ -1,0 +1,78 @@
+{
+  "project": "Shopfront web app (synthetic demo data)",
+  "nextId": 10,
+  "settings": { "autonomy": "auto", "wipPerPerson": 2, "wipColumn": 5 },
+  "team": [
+    { "id": "priya", "name": "Priya Patel", "role": "Frontend engineer", "skills": ["frontend", "ui", "css", "design", "browser"] },
+    { "id": "marcus", "name": "Marcus Lee", "role": "Backend engineer", "skills": ["backend", "api", "database", "auth", "payments"] },
+    { "id": "jordan", "name": "Jordan Kim", "role": "DevOps and QA", "skills": ["devops", "testing", "ci", "deploy", "infrastructure"] },
+    { "id": "sam", "name": "Sam Rivera", "role": "Full-stack engineer", "skills": ["frontend", "backend", "mobile", "docs", "payments"] }
+  ],
+  "tickets": [
+    {
+      "id": "RB-1", "title": "Run tests on every pull request in CI", "type": "task", "priority": "high", "estimate": 3,
+      "description": "Set up the CI pipeline so unit tests run automatically on each pull request and block the merge if they fail.",
+      "labels": ["devops", "testing"], "assignee": "jordan", "status": "done",
+      "criteria": [{ "text": "Tests run on every PR", "done": true }, { "text": "A failing test blocks the merge", "done": true }],
+      "deliverable": "PR #38: CI workflow added", "blocked": false, "blockedReason": "", "flags": [], "ageDays": 0.5
+    },
+    {
+      "id": "RB-2", "title": "Add password reset email flow", "type": "story", "priority": "high", "estimate": 5,
+      "description": "Users who forget their password can request a reset link by email. The link expires after 30 minutes.",
+      "labels": ["backend", "auth"], "assignee": "marcus", "status": "in_review",
+      "criteria": [{ "text": "Reset email arrives within a minute", "done": true }, { "text": "Link expires after 30 minutes", "done": true }, { "text": "Old password stops working after reset", "done": false }],
+      "deliverable": "PR #42: password reset endpoints and email template", "blocked": false, "blockedReason": "", "flags": [], "ageDays": 5
+    },
+    {
+      "id": "RB-3", "title": "Image carousel on the product page", "type": "story", "priority": "medium", "estimate": 5,
+      "description": "Product pages show all product photos in a swipeable carousel instead of a single image.",
+      "labels": ["frontend"], "assignee": "priya", "status": "in_progress",
+      "criteria": [{ "text": "Swipe and arrow keys both work", "done": false }, { "text": "Images lazy-load", "done": false }],
+      "deliverable": "", "blocked": false, "blockedReason": "", "flags": [], "ageDays": 1
+    },
+    {
+      "id": "RB-4", "title": "Cart total rounds wrong when a discount applies", "type": "bug", "priority": "high", "estimate": 3,
+      "description": "With a 15% discount on a $19.99 item the cart shows $16.98 but the charge is $16.99. Rounding happens at different steps.",
+      "labels": ["backend", "payments"], "assignee": "marcus", "status": "in_progress",
+      "criteria": [{ "text": "Cart total and charged amount always match", "done": false }, { "text": "Regression test for discounted totals", "done": false }],
+      "deliverable": "", "blocked": false, "blockedReason": "", "flags": [], "ageDays": 2
+    },
+    {
+      "id": "RB-5", "title": "Dark mode toggle in settings", "type": "story", "priority": "low", "estimate": 3,
+      "description": "Add a dark mode switch on the settings page that remembers the user's choice.",
+      "labels": ["frontend", "ui"], "assignee": null, "status": "todo",
+      "criteria": [{ "text": "Toggle switches the whole app's theme", "done": false }, { "text": "Choice is remembered on the next visit", "done": false }],
+      "deliverable": "", "blocked": false, "blockedReason": "", "flags": [], "ageDays": 3
+    },
+    {
+      "id": "RB-6", "title": "Paginate the order history API", "type": "task", "priority": "medium", "estimate": 2,
+      "description": "The order history endpoint returns every order at once and is slow for big accounts. Return 20 per page.",
+      "labels": ["backend", "api"], "assignee": "sam", "status": "todo",
+      "criteria": [{ "text": "Endpoint accepts page and page_size", "done": false }, { "text": "Response time under 300 ms for 1,000 orders", "done": false }],
+      "deliverable": "", "blocked": false, "blockedReason": "", "flags": [], "ageDays": 2
+    },
+    {
+      "id": "RB-7", "title": "Checkout fails on Safari when a promo code is applied", "type": "bug", "priority": "high", "estimate": null,
+      "description": "On Safari 17, applying a promo code at checkout shows a spinner forever and the order never goes through.",
+      "labels": ["frontend", "payments"], "assignee": null, "status": "backlog",
+      "criteria": [], "deliverable": "", "blocked": false, "blockedReason": "", "flags": [], "ageDays": 1
+    },
+    {
+      "id": "RB-8", "title": "Make the dashboard better", "type": "story", "priority": "medium", "estimate": null,
+      "description": "Dashboard needs work.",
+      "labels": [], "assignee": null, "status": "backlog",
+      "criteria": [], "deliverable": "", "blocked": false, "blockedReason": "", "flags": ["needs-info"],
+      "question": "Which part of the dashboard, and what problem are users having with it?", "ageDays": 4
+    },
+    {
+      "id": "RB-9", "title": "Upgrade build images to Node 22", "type": "task", "priority": "medium", "estimate": 2,
+      "description": "Move the build and deploy images to Node 22. Waiting on the hosting vendor to support Node 22 in our region.",
+      "labels": ["devops"], "assignee": "jordan", "status": "backlog",
+      "criteria": [{ "text": "Builds pass on Node 22", "done": false }, { "text": "Production runs Node 22", "done": false }],
+      "deliverable": "", "blocked": false, "blockedReason": "", "flags": [], "ageDays": 2
+    }
+  ],
+  "proposals": [],
+  "activity": [],
+  "usage": { "runs": 0, "inputTokens": 0, "outputTokens": 0, "cost": 0 }
+}
